@@ -1,0 +1,126 @@
+{
+
+"app_name":"Coffee Now",
+"login":"Login",
+"email":"Email",
+"password":"Password",
+"forget_password":"Forgot Password",
+"dont_have_account":"Don't have an account?",
+"already_have_account":"Already have an account?",
+"register":"Register",
+"or":"OR",
+"fullname":"Fullname",
+"phone_number":"Phone Number",
+"address_setup":"Address Setup",
+"address":"Address",
+"address_line_1":"Address Line 1",
+"address_line_2":"Address Line 2",
+"zip_code":"ZIP Code",
+"city":"City",
+"country":"Country",
+"add_address":"ADD ADDRESS",
+"skip_for_now":"Skip for now",
+"reset_password":"Reset Password",
+"hello":"Hello",
+"recommended_for_you":"Recommended For You",
+"coffee_shop":"Coffee Shop",
+"recents":"Recents",
+"clear_all":"Clear All",
+"search":"Search",
+"transactions":"Transactions",
+"reorder":"Reorder",
+"item":"Item",
+"favourite_items":"Favourite Items",
+"favourite":"Favourite",
+"sugar_level":"Sugar Level",
+"normal":"Normal",
+"less_sugar":"Less Sugar",
+"without":"Without",
+
+"special_instructions":"Special Instructions",
+"optional":"Optional",
+"ex_instructions":"E.g No onions, please",
+"add_to_basket":"Add to Basket",
+"go_to_checkout":"Go to Checkout",
+"my_basket":"My Basket",
+"deliver_to":"Deliver to",
+
+"delivery":"Delivery",
+"order_summary":"Order Summary",
+"change_options":"Change Options",
+"add_items":"Add Items",
+"subtotal":"Subtotal",
+"edit":"Edit",
+"delivery_fee":"Delivery Fee",
+"tax":"Tax",
+"cash":"Cash",
+"payment_details":"Payment Details",
+"credit_debit_card":"Credit/Debit Card",
+"add_a_promo":"Add a Promo",
+"enter_coupon_code":"Enter Coupon code",
+"total":"Total",
+"place_order":"Place Order",
+"distance_from_you":"Distance from you",
+"your_order_has_accepted":"Your Order has been accepted",
+"your_items_placed_in_way":"Your items has been placed and is on it’s way to being processed",
+"track_order":"Track Order",
+"back_to_home":"Back To Home",
+"edit_account_info":"Edit Account info",
+"favorites":"Favorites",
+"saved_address":"Saved Address",
+"rewards_or_coupon":"Rewards or Coupon",
+"settings":"Settings",
+"logout":"Logout",
+"username":"Username",
+"phone":"phone",
+"update":"Update",
+"clear":"Clear",
+"change_language":"Change Language",
+"dark_mode":"Dark Mode",
+"privacy_policy":"Privacy Policy",
+"about_coffee_now_apps":"About Coffee Now Apps",
+"rate_our_app":"Rate our app",
+"faq":"FAQ",
+"confirm":"Confirm",
+"cancel":"Cancel",
+"additional_info":"Additional Info",
+"order_now":"ORDER NOW",
+"error_happened":"Error Happened",
+"try_again":"Try Again",
+"arabic":"Arabic",
+"english":"English",
+"camera":"Camera",
+"gallery":"Gallery",
+"no_items_add_to_basket":"No items add to basket",
+"favorites_Items_empty":"Favorites Items Empty",
+"no_saved_address_found":"No Saved Address Found",
+"you_dont_have_coupons":"You Don’t Have Coupons",
+"otp_verification":"OTP Verification",
+"we_will_send_you_one_time_password_on_this ":"We Will send you a one time password on this ",
+
+"mobile_number":"Mobile Number",
+"send_otp":"Send OTP",
+"do_not_send_otp ?":"Do not send OTP ?",
+"submit":"Submit",
+"account":"Account"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
