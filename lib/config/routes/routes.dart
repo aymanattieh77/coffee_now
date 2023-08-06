@@ -1,5 +1,6 @@
-import 'package:coffee_now/config/routes/app_router.dart';
 import 'package:flutter/material.dart';
+
+import 'package:coffee_now/config/routes/app_router.dart';
 
 abstract class Routes {
   static const splash = '/';
@@ -12,7 +13,7 @@ abstract class RouterGenerator {
         return AppRouter.screen(const Scaffold());
 
       default:
-        return AppRouter.screen(const Scaffold());
+        return AppRouter.onUnknownScreen();
     }
   }
 }

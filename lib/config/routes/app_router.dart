@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 
+import 'package:coffee_now/core/components/widgets/text_utils.dart';
+
 class AppRouter {
   static MaterialPageRoute screen(Widget child) {
     return MaterialPageRoute(builder: (ctx) => child);
+  }
+
+  static onUnknownScreen() {
+    return MaterialPageRoute(
+      builder: (ctx) => const Scaffold(
+        body: Center(
+          child: TextUtils(text: "onUnknownRoute", fontSize: 30),
+        ),
+      ),
+    );
   }
 
   static push(BuildContext context, Widget page, [bool replacement = false]) {
