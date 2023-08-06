@@ -102,12 +102,36 @@
 "send_otp":"Send OTP",
 "do_not_send_otp ?":"Do not send OTP ?",
 "submit":"Submit",
-"account":"Account"
+"account":"Account",
 
 
 
 
+"please_fill_the_field":"Please Fill the input field",
+"is_not_vaild_name":"Is not valid name",
+"email_is_not_valid":"Email is not valid",
+"password_is_too_short":"password is  too short",
+"please_fill_the_checkbox":"Please fill the checkbox",
+"check_your_email_address":"Check Your Email Address",
+"email_invalid":"Email Invalid",
+"the_password_provided_is_too_weak":"The password provided is too weak.",
+"account_already_exists":"The account already exists for that email.",
+"user_not_found":"No user found for that email.",
+"wrong_password":"Wrong password",
+"invalid_phone_number":"Invalid phone number",
 
+"check_your_internet_connection":"Check Your Internet Connection!",
+
+"something_went_wrong":"SomeThing Went Wrong",
+"connection_timeout_with_server":"Connection timeout with server",
+"receive_timeout_with_server":"Receive timeout with Server",
+"send_timeout_with_server":"Send timeout with Server",
+"bad_certificate_with_server":"Bad Certificate with server",
+"request_to_server_was_canceld":"Request to Server was canceled",
+"no_internet_connection":"No Internet Connection",
+"opps_there_was_an_error":"Opps There was an Error, Please try again",
+"your_request_was_not_found":"Your request was not found, please try later",
+"server_error":"There is a problem with server, please try later"
 
 
 

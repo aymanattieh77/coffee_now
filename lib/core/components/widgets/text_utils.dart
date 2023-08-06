@@ -1,6 +1,8 @@
-import 'package:coffee_now/core/resources/style.dart';
-import 'package:coffee_now/core/resources/colors.dart';
 import 'package:flutter/material.dart';
+
+import 'package:coffee_now/core/extensions/context_extensions.dart';
+import 'package:coffee_now/core/resources/colors.dart';
+import 'package:coffee_now/core/resources/style.dart';
 
 class TextUtils extends StatelessWidget {
   const TextUtils({
@@ -37,7 +39,8 @@ class TextUtils extends StatelessWidget {
       ),
       maxLines: maxLines,
       softWrap: false,
-      textDirection: TextDirection.ltr,
+      textDirection:
+          context.isArabicLocale() ? TextDirection.rtl : TextDirection.ltr,
       textAlign: TextAlign.left,
     );
   }
