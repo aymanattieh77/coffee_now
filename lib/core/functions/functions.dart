@@ -1,4 +1,8 @@
+import 'package:coffee_now/core/components/widgets/text_utils.dart';
+import 'package:coffee_now/core/resources/colors.dart';
+import 'package:coffee_now/core/resources/style.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void dismissDialog(BuildContext context) {
   if (_isCurrentDialogShowing(context)) {
@@ -14,19 +18,36 @@ showCustomBottomSheet(BuildContext context, Widget child) {
   showModalBottomSheet(
     context: context,
     builder: (context) => child,
-    isScrollControlled: true,
     useSafeArea: true,
-    backgroundColor: Theme.of(context).cardColor,
+    backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     shape: ContinuousRectangleBorder(
       borderRadius: BorderRadius.circular(30),
     ),
   );
 }
 
-// void showSnackMessage(BuildContext context, {required String message}) {
-//   final SnackBar snackBar = SnackBar(
-//     content: TextUtils(text: message, color: Colors.white),
-//     backgroundColor: AppColor.orange,
-//   );
-//   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-// }
+void showToastMessage({required String message}) async {
+  await Fluttertoast.showToast(
+    msg: message,
+    backgroundColor: AppColor.oranage,
+    fontSize: FontSizes.f14,
+    toastLength: Toast.LENGTH_SHORT,
+    gravity: ToastGravity.BOTTOM,
+  );
+}
+
+void showSnackMessage(BuildContext context,
+    {required String message, required Function() undoPress}) {
+  final SnackBar snackBar = SnackBar(
+    content: TextUtils(text: message, color: Colors.white),
+    backgroundColor: AppColor.oranage,
+    // showCloseIcon: true,
+    //closeIconColor: AppColor.white,
+    action: SnackBarAction(
+      label: "Undo",
+      onPressed: undoPress,
+      textColor: AppColor.whiteE9,
+    ),
+  );
+  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+}

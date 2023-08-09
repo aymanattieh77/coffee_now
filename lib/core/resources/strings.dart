@@ -100,4 +100,5 @@ abstract class AppStrings {
   static const String doNotSendOTP = 'do_not_send_otp ?';
   static const String submit = 'submit';
   static const String account = 'account';
+  static const String restartApp = 'restart_app';
 }

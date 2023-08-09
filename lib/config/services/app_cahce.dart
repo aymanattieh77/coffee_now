@@ -7,7 +7,7 @@ const langKey = "LANGAUGE_KEY";
 const darkModeKey = "DARK_KEY";
 
 abstract class AppCahce {
-  Future<String> getAppLanguage();
+  Future<String> getCurrentAppLanguage();
   Future<void> changeAppLanguage(LanugageType lanugageType);
   Future<Locale> getLocale();
   Future<bool> isDarkMode();
@@ -19,15 +19,11 @@ class AppCacheImpl implements AppCahce {
   AppCacheImpl(this._prefs);
   @override
   Future<void> changeAppLanguage(LanugageType lanugageType) async {
-    if (lanugageType == LanugageType.english) {
-      _prefs.setString(langKey, LanugageType.arabic.getValue());
-    } else {
-      _prefs.setString(langKey, LanugageType.english.getValue());
-    }
+    await _prefs.setString(langKey, lanugageType.getValue());
   }
 
   @override
-  Future<String> getAppLanguage() async {
+  Future<String> getCurrentAppLanguage() async {
     String? language = _prefs.getString(langKey);
     if (language != null && language.isNotEmpty) {
       return language;
@@ -38,7 +34,7 @@ class AppCacheImpl implements AppCahce {
 
   @override
   Future<Locale> getLocale() async {
-    String currentLanguage = await getAppLanguage();
+    String currentLanguage = await getCurrentAppLanguage();
     if (currentLanguage == LanugageType.arabic.getValue()) {
       return arabicLocale;
     } else {

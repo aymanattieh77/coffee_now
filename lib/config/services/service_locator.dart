@@ -1,3 +1,4 @@
+import 'package:coffee_now/config/language/language_cubit.dart';
 import 'package:coffee_now/config/services/app_cahce.dart';
 import 'package:coffee_now/config/theme/theme_cubit.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ Future<void> serviceLocatorStart() async {
 Future<void> setupAppService() async {
   final sharedPreferences = await SharedPreferences.getInstance();
   getIt.registerLazySingleton<AppCahce>(() => AppCacheImpl(sharedPreferences));
+  getIt.registerLazySingleton<LanguageCubit>(() => LanguageCubit());
 }
 
 Future<void> setupAppTheme() async {

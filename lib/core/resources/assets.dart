@@ -42,21 +42,22 @@ abstract class AssetsIconPath {
 }
 
 abstract class ImageAssetsPath {
-  static const String coffeeBackground = "${imagesPath}coffee_background.svg";
-  static const String coffeeItem = "${imagesPath}coffee_item.svg";
-  static const String container = "${imagesPath}container.svg";
-  static const String starbucksLogo = "${imagesPath}starbucks_logo.svg";
-  static const String starbuckShop = "${imagesPath}starbucks_shop.svg";
-  static const String facebook = "${imagesPath}facebook.svg";
-  static const String google = "${imagesPath}google.svg";
+  static const String coffeeBackground = "${imagesPath}coffee_background.png";
+  static const String coffeeItem = "${imagesPath}coffee_item.png";
+  static const String container = "${imagesPath}container.png";
+  static const String starbucksLogo = "${imagesPath}starbucks_logo.png";
+  static const String starbuckShop = "${imagesPath}starbucks_shop.png";
+  static const String facebook = "${imagesPath}facebook.png";
+  static const String google = "${imagesPath}google.png";
 }
 
 abstract class AnimationAssetsPath {
-  static const String error = "${animationsPath}animation_error.svg";
-  static const String error2 = "${animationsPath}animation_error2.svg";
-  static const String loading = "${animationsPath}animation_loading_coffie.svg";
+  static const String error = "${animationsPath}animation_error.json";
+  static const String error2 = "${animationsPath}animation_error2.json";
+  static const String loading =
+      "${animationsPath}animation_loading_coffie.json";
   static const String loading2 =
-      "${animationsPath}animation_loading_coffie2.svg";
-  static const String loadingCircle = "${animationsPath}animation_loading.svg";
-  static const String success = "${animationsPath}animation_success.svg";
+      "${animationsPath}animation_loading_coffie2.json";
+  static const String loadingCircle = "${animationsPath}animation_loading.json";
+  static const String success = "${animationsPath}animation_success.json";
 }
