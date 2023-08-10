@@ -15,7 +15,7 @@ class CustomElevatedButton extends StatelessWidget {
       this.elevation,
       this.size});
   final String text;
-  final Function()? onPressed;
+  final void Function()? onPressed;
   final Color? color;
   final Color? textColor;
   final double? elevation;

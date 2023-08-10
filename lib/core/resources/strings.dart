@@ -101,4 +101,32 @@ abstract class AppStrings {
   static const String submit = 'submit';
   static const String account = 'account';
   static const String restartApp = 'restart_app';
+
+  //validations
+  static const pleaseFillTheField = 'please_fill_the_field';
+  static const isNotVaildName = 'is_not_vaild_name';
+  static const emailIsNotValid = 'email_is_not_valid';
+  static const passwordIsTooShort = 'password_is_too_short';
+  static const pleaseFillTheCheckbox = 'please_fill_the_checkbox';
+  static const checkYourEmailAddress = 'check_your_email_address';
+  static const emailInvaild = 'email_invalid';
+  static const passwordProvidedWeak = 'the_password_provided_is_too_weak';
+  static const accountAlreadyExists = 'account_already_exists';
+  static const userNotFound = 'user_not_found';
+  static const wrongPassword = 'wrong_password';
+  static const invaildPhoneNumber = 'invalid_phone_number';
+
+  // errors
+  static const internetConnectionError = 'check_your_internet_connection';
+
+  static const somthingWentWrong = 'something_went_wrong';
+  static const connectionTimeout = 'connection_timeout_with_server';
+  static const sendTimeout = 'send_timeout_with_Server';
+  static const receiveTimeout = 'receive_timeout_with_server';
+  static const badCertificate = 'bad_certificate_with_server';
+  static const cancelServer = 'request_to_server_was_canceld';
+  static const connectionError = 'no_internet_connection';
+  static const unknownError = 'opps_there_was_an_error';
+  static const notFoundError = 'your_request_was_not_found';
+  static const serverError = 'server_error';
 }

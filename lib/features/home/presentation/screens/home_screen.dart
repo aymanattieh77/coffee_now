@@ -18,9 +18,9 @@ class HomeScreen extends StatelessWidget {
             children: [
               AppLogoWithLabel(label: AppStrings.login),
               SizedBox(height: AppSize.s36),
-              CustomTextField(),
+              // CustomTextField(),
               SizedBox(height: AppSize.s28),
-              CustomTextField(),
+              // CustomTextField(),
             ],
           ),
         ),
