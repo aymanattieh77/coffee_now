@@ -49,6 +49,7 @@ abstract class ImageAssetsPath {
   static const String starbuckShop = "${imagesPath}starbucks_shop.png";
   static const String facebook = "${imagesPath}facebook.png";
   static const String google = "${imagesPath}google.png";
+  static const String maskImage = "${imagesPath}mask_group.png";
 }
 
 abstract class AnimationAssetsPath {
