@@ -1,3 +1,4 @@
+import 'package:coffee_now/bloc_observer.dart';
 import 'package:coffee_now/config/language/language_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ void main() async {
   );
   await EasyLocalization.ensureInitialized();
   await serviceLocatorStart();
+  Bloc.observer = MyBLocObserver();
   runApp(
     Phoenix(
       child: EasyLocalization(

@@ -13,7 +13,7 @@ class CahceException implements Exception {
   CahceException(this.message);
 }
 
-class FireException implements Exception {
+class AuthException implements Exception {
   final String message;
-  FireException(this.message);
+  AuthException(this.message);
 }

@@ -13,13 +13,15 @@ class CustomElevatedButton extends StatelessWidget {
       this.color,
       this.textColor,
       this.elevation,
-      this.size});
+      this.size,
+      this.uppercase = true});
   final String text;
   final void Function()? onPressed;
   final Color? color;
   final Color? textColor;
   final double? elevation;
   final Size? size;
+  final bool uppercase;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -27,10 +29,13 @@ class CustomElevatedButton extends StatelessWidget {
           backgroundColor: color ?? Theme.of(context).primaryColor,
           minimumSize: size ?? const Size(double.infinity, AppSize.s54),
           elevation: elevation,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
           padding: const EdgeInsets.all(AppPadding.p5)),
       onPressed: onPressed,
       child: TextUtils(
-        text: text,
+        text: uppercase ? text.toUpperCase() : text,
         fontSize: 18,
         fontWe: FontWe.semiBold,
         color: textColor ??

@@ -27,28 +27,24 @@ class _CustomTextFieldState extends State<CustomTextField> {
   bool isObsecure = true;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: AppPadding.p20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TextUtils(text: widget.label, color: AppColor.grey7D),
-          const SizedBox(height: AppSize.s6),
-          TextFormField(
-            controller: widget.controller,
-            obscureText: isPasswordField ? isObsecure : false,
-            keyboardType: widget.inputType,
-            maxLines: 1,
-            textDirection: context.isArabicLocale()
-                ? TextDirection.rtl
-                : TextDirection.ltr,
-            decoration: _inputDecoration(),
-            validator: (value) {
-              return formVaildation(value, widget.inputType);
-            },
-          ),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        TextUtils(text: widget.label, color: AppColor.grey7D),
+        const SizedBox(height: AppSize.s6),
+        TextFormField(
+          controller: widget.controller,
+          obscureText: isPasswordField ? isObsecure : false,
+          keyboardType: widget.inputType,
+          maxLines: 1,
+          textDirection:
+              context.isArabicLocale() ? TextDirection.rtl : TextDirection.ltr,
+          decoration: _inputDecoration(),
+          validator: (value) {
+            return formVaildation(value, widget.inputType);
+          },
+        ),
+      ],
     );
   }
 
@@ -84,6 +80,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       border: _border(),
       enabledBorder: _border(),
       focusedBorder: _border(),
+      suffixIconColor: AppColor.grey7C,
       suffixIcon: visiblityIcon(),
     );
   }

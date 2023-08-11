@@ -3,8 +3,17 @@ import 'package:coffee_now/core/extensions/string_extensions.dart';
 import 'package:coffee_now/core/resources/colors.dart';
 import 'package:coffee_now/core/resources/strings.dart';
 import 'package:coffee_now/core/resources/style.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+
+customCircularLoading() {
+  return const Center(
+    child: CircularProgressIndicator(
+      color: AppColor.oranage,
+    ),
+  );
+}
 
 void dismissDialog(BuildContext context) {
   if (_isCurrentDialogShowing(context)) {
@@ -30,7 +39,7 @@ showCustomBottomSheet(BuildContext context, Widget child) {
 
 void showToastMessage({required String message}) async {
   await Fluttertoast.showToast(
-    msg: message,
+    msg: message.tr(),
     backgroundColor: AppColor.oranage,
     fontSize: FontSizes.f14,
     toastLength: Toast.LENGTH_SHORT,
@@ -56,7 +65,7 @@ void showSnackMessage(BuildContext context,
 
 String? formVaildation(String? value, TextInputType type) {
   if (value == null || value.isEmpty) {
-    return AppStrings.pleaseFillTheField;
+    return AppStrings.pleaseFillTheField.tr();
   }
   switch (type) {
     case TextInputType.phone:

@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:coffee_now/core/components/widgets/widgets.dart';
 import 'package:coffee_now/core/extensions/context_extensions.dart';
 import 'package:coffee_now/core/resources/resources.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class AppLogoWithLabel extends StatelessWidget {
   const AppLogoWithLabel({super.key, required this.label});
@@ -19,7 +20,7 @@ class AppLogoWithLabel extends StatelessWidget {
         ),
         const SizedBox(height: AppSize.s16),
         TextUtils(
-          text: label,
+          text: label.toUpperCase(),
           color: context.isDark() ? AppColor.white : AppColor.strokeDark,
           fontSize: FontSizes.f24,
           fontWe: FontWe.semiBold,
