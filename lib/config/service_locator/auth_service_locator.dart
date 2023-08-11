@@ -1,3 +1,4 @@
+import 'package:coffee_now/features/auth/presentaion/controllers/otp_vertification/otp_bloc.dart';
 import 'package:coffee_now/features/auth/presentaion/controllers/reset_password/reset_password_bloc.dart';
 import 'package:get_it/get_it.dart';
 
@@ -17,12 +18,6 @@ void setupAuthService() {
       () => AuthRemoteDataSourceImpl(getIt<AuthService>()));
   getIt.registerLazySingleton<AuthRepository>(
       () => AuthRepositoryImpl(getIt<AuthRemoteDataSource>()));
-}
-
-setupAuthUsecases() {
-  getIt.registerLazySingleton<VertifyPhoneUsecase>(
-    () => VertifyPhoneUsecase(getIt()),
-  );
 }
 
 setupRegisterBloc() {
@@ -60,6 +55,17 @@ setupResetPasswordBloc() {
     );
     getIt.registerFactory<ResetPasswordBloc>(
       () => ResetPasswordBloc(getIt()),
+    );
+  }
+}
+
+setupVerfiyPhone() {
+  if (!GetIt.I.isRegistered<OTPBloc>()) {
+    getIt.registerLazySingleton<VertifyPhoneUsecase>(
+      () => VertifyPhoneUsecase(getIt()),
+    );
+    getIt.registerFactory<OTPBloc>(
+      () => OTPBloc(getIt()),
     );
   }
 }

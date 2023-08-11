@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:coffee_now/config/service_locator/service_locator.dart';
 import 'package:coffee_now/config/services/app_cahce.dart';
 import 'package:flutter/material.dart';
@@ -136,9 +138,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   _registerSuccess(String userUid) async {
     await getIt<AppCahce>().saveUserUid(userUid);
-    // ignore: use_build_context_synchronously
+
     dismissDialog(context);
-    // AppRouter.push(context, OTPVerificationScreen(phoneNumber :_registerBloc.phoneController.text));
+    AppRouter.push(
+      context,
+      otpVertificationScreen(_registerBloc.phoneController.text),
+      true,
+    );
   }
 
   _registerFailure(String error) {

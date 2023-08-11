@@ -33,7 +33,7 @@ class TextUtils extends StatelessWidget {
       tr ? text.tr() : text,
       style: TextStyle(
         fontFamily: fontFamily.getFontFamily(),
-        color: color ?? AppColor.dark2D,
+        color: color ?? (context.isDark() ? AppColor.white : AppColor.black),
         fontWeight: fontWe.getFontweight(),
         fontSize: fontSize,
         overflow: TextOverflow.ellipsis,
