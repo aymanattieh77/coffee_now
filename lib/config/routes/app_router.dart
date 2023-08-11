@@ -28,9 +28,9 @@ class AppRouter {
   static pushNamed(BuildContext context,
       {required String routeName, bool replacement = false, Object? args}) {
     if (replacement) {
-      Navigator.of(context).pushNamed(routeName, arguments: args);
-    } else {
       Navigator.of(context).pushReplacementNamed(routeName, arguments: args);
+    } else {
+      Navigator.of(context).pushNamed(routeName, arguments: args);
     }
   }
 

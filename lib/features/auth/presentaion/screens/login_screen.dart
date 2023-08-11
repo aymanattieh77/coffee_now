@@ -1,4 +1,8 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:coffee_now/config/routes/app_router.dart';
+import 'package:coffee_now/config/service_locator/service_locator.dart';
+import 'package:coffee_now/config/services/app_cahce.dart';
 import 'package:coffee_now/core/components/state_renderer/show_state_renderer.dart';
 import 'package:coffee_now/core/functions/functions.dart';
 import 'package:coffee_now/features/auth/presentaion/controllers/login/login_bloc.dart';
@@ -45,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 } else if (state is LoginLoading) {
                   ShowStateRenderer.loading(context);
                 } else if (state is LoginSuccess) {
-                  _loginSuccess();
+                  _loginSuccess(state.userUid);
                 } else {
                   return;
                 }
@@ -80,7 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
             inputType: TextInputType.visiblePassword,
           ),
           const SizedBox(height: AppSize.s10),
-          forgetPassword(),
+          forgetPassword(context),
           const SizedBox(height: AppSize.s25),
           CustomElevatedButton(
             text: AppStrings.login,
@@ -102,7 +106,8 @@ class _LoginScreenState extends State<LoginScreen> {
     _loginBloc.login();
   }
 
-  _loginSuccess() {
+  _loginSuccess(String userUid) async {
+    await getIt<AppCahce>().saveUserUid(userUid);
     dismissDialog(context);
     AppRouter.pushNamed(context, routeName: Routes.home, replacement: true);
   }

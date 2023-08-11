@@ -1,3 +1,5 @@
+import 'package:coffee_now/config/service_locator/service_locator.dart';
+import 'package:coffee_now/config/services/app_cahce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -35,13 +37,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: AppPadding.p20),
             child: BlocListener<RegisterBloc, RegisterState>(
-              listener: (context, state) {
+              listener: (context, state) async {
                 if (state is RegisterFailure) {
                   _registerFailure(state.message);
                 } else if (state is RegisterLoading) {
                   ShowStateRenderer.loading(context);
                 } else if (state is RegisterSuccess) {
-                  _registerSuccess();
+                  await _registerSuccess(state.userUid);
                 } else {
                   return;
                 }
@@ -132,7 +134,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
     _registerBloc.register();
   }
 
-  _registerSuccess() {
+  _registerSuccess(String userUid) async {
+    await getIt<AppCahce>().saveUserUid(userUid);
+    // ignore: use_build_context_synchronously
     dismissDialog(context);
     // AppRouter.push(context, OTPVerificationScreen(phoneNumber :_registerBloc.phoneController.text));
   }

@@ -35,7 +35,7 @@ class CustomElevatedButton extends StatelessWidget {
           padding: const EdgeInsets.all(AppPadding.p5)),
       onPressed: onPressed,
       child: TextUtils(
-        text: uppercase ? text.toUpperCase() : text,
+        text: uppercase ? text : text,
         fontSize: 18,
         fontWe: FontWe.semiBold,
         color: textColor ??

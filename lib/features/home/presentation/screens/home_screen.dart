@@ -1,5 +1,6 @@
+import 'package:coffee_now/config/service_locator/service_locator.dart';
+import 'package:coffee_now/config/services/app_cahce.dart';
 import 'package:coffee_now/core/components/widgets/applogo_with_label.dart';
-import 'package:coffee_now/core/components/widgets/custom_text_field.dart';
 
 import 'package:coffee_now/core/components/widgets/widgets.dart';
 import 'package:coffee_now/core/resources/resources.dart';
@@ -10,23 +11,24 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: AppColor.red,
       body: Scaffold(
         body: SafeArea(
           child: Column(
             children: [
-              AppLogoWithLabel(label: AppStrings.login),
-              SizedBox(height: AppSize.s36),
+              const AppLogoWithLabel(label: AppStrings.login),
+              const SizedBox(height: AppSize.s36),
               // CustomTextField(),
-              SizedBox(height: AppSize.s28),
+              const SizedBox(height: AppSize.s28),
+              TextUtils(text: getIt<AppCahce>().getUserUid())
               // CustomTextField(),
             ],
           ),
         ),
-        floatingActionButton: FloatingBasketButton(),
+        floatingActionButton: const FloatingBasketButton(),
       ),
-      floatingActionButton: CustomBottomNavigationBar(currentIndex: 0),
+      floatingActionButton: const CustomBottomNavigationBar(currentIndex: 0),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }

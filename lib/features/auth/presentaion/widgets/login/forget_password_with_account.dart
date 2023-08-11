@@ -30,16 +30,17 @@ Widget dontHaveAccount(BuildContext context) {
   );
 }
 
-Widget forgetPassword() {
+Widget forgetPassword(BuildContext context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.end,
     children: [
       InkWell(
         onTap: () {
-          // AppRouter.pushNamed(
-          //   context,
-          //   routeName: Routes.forgetPassword,
-          // );
+          AppRouter.pushNamed(
+            context,
+            routeName: Routes.forgetPassword,
+            replacement: false,
+          );
         },
         child: const TextUtils(
           text: AppStrings.forgetPassword,

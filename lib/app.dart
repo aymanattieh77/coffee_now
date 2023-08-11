@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:coffee_now/config/routes/routes.dart';
 import 'package:coffee_now/config/services/app_cahce.dart';
-import 'package:coffee_now/config/services/service_locator.dart';
+import 'package:coffee_now/config/service_locator/service_locator.dart';
 import 'package:coffee_now/config/theme/theme_cubit.dart';
 import 'package:coffee_now/config/theme/themes.dart';
 

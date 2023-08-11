@@ -20,7 +20,7 @@ class AppLogoWithLabel extends StatelessWidget {
         ),
         const SizedBox(height: AppSize.s16),
         TextUtils(
-          text: label.toUpperCase(),
+          text: label,
           color: context.isDark() ? AppColor.white : AppColor.strokeDark,
           fontSize: FontSizes.f24,
           fontWe: FontWe.semiBold,

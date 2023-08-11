@@ -95,7 +95,7 @@ abstract class AppStrings {
   static const String youDontHaveCoupons = 'you_dont_have_coupons';
   static const String otpVerification = 'otp_verification';
   static const String weWillSendOneTimePassword =
-      'we_will_send_you_one_time_password_on_this';
+      'we_will_send_you_one_time_password_on_this ';
   static const String mobileNumber = 'mobile_number';
   static const String doNotSendOTP = 'do_not_send_otp ?';
   static const String submit = 'submit';

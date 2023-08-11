@@ -2,7 +2,7 @@
 
 import 'package:coffee_now/config/language/language_manager.dart';
 import 'package:coffee_now/config/services/app_cahce.dart';
-import 'package:coffee_now/config/services/service_locator.dart';
+import 'package:coffee_now/config/service_locator/service_locator.dart';
 import 'package:coffee_now/core/components/dialogs/dialogs.dart';
 import 'package:coffee_now/core/functions/functions.dart';
 import 'package:coffee_now/core/resources/strings.dart';

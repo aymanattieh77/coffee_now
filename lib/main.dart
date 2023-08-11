@@ -7,7 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:coffee_now/app.dart';
 import 'package:coffee_now/config/language/language_manager.dart';
-import 'package:coffee_now/config/services/service_locator.dart';
+import 'package:coffee_now/config/service_locator/service_locator.dart';
 import 'package:coffee_now/config/theme/theme_cubit.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 

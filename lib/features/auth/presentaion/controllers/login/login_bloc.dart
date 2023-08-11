@@ -67,11 +67,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       (failure) {
         emit(LoginFailure(failure.message));
       },
-      (userUid) async {
+      (userUid) {
         emit(LoginSuccess(userUid));
-
-        //  await Future.delayed(const Duration(seconds: 2));
-        //  AppRouter.pushNamed(context, routeName: routeName)
       },
     );
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:coffee_now/config/services/app_cahce.dart';
-import 'package:coffee_now/config/services/service_locator.dart';
+import 'package:coffee_now/config/service_locator/service_locator.dart';
 
 class ThemeCubit extends Cubit<ThemeMode> {
   ThemeCubit(super.initialState);

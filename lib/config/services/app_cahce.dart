@@ -5,6 +5,7 @@ import 'package:coffee_now/config/language/language_manager.dart';
 
 const langKey = "LANGAUGE_KEY";
 const darkModeKey = "DARK_KEY";
+const userUidKey = "USER_UID_KEY";
 
 abstract class AppCahce {
   Future<String> getCurrentAppLanguage();
@@ -12,6 +13,8 @@ abstract class AppCahce {
   Future<Locale> getLocale();
   Future<bool> isDarkMode();
   Future<void> setDarkTheme(bool isDark);
+  Future<void> saveUserUid(String userUid);
+  String getUserUid();
 }
 
 class AppCacheImpl implements AppCahce {
@@ -50,5 +53,15 @@ class AppCacheImpl implements AppCahce {
   @override
   Future<void> setDarkTheme(bool isDark) async {
     await _prefs.setBool(darkModeKey, isDark);
+  }
+
+  @override
+  String getUserUid() {
+    return _prefs.getString(userUidKey) ?? "";
+  }
+
+  @override
+  Future<void> saveUserUid(String userUid) async {
+    await _prefs.setString(userUidKey, userUid);
   }
 }
