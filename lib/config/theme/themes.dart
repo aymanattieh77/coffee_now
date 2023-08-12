@@ -1,5 +1,6 @@
 import 'package:coffee_now/core/resources/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AppTheme {
   static final lightTheme = ThemeData(
@@ -11,6 +12,16 @@ class AppTheme {
     hintColor: AppColor.greyAA,
     cardColor: AppColor.white,
     brightness: Brightness.light,
+    appBarTheme: const AppBarTheme(
+      elevation: 0.0,
+      centerTitle: true,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarBrightness: Brightness.light,
+        statusBarColor: AppColor.white,
+        systemNavigationBarColor: AppColor.white,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    ),
   );
   static final darkTheme = ThemeData(
     scaffoldBackgroundColor: AppColor.backgroundDark,
@@ -21,5 +32,15 @@ class AppTheme {
     cardColor: AppColor.strokeDark,
     brightness: Brightness.dark,
     hintColor: AppColor.greyAA,
+    appBarTheme: const AppBarTheme(
+      elevation: 0.0,
+      centerTitle: true,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarBrightness: Brightness.dark,
+        statusBarColor: AppColor.backgroundDark,
+        systemNavigationBarColor: AppColor.backgroundDark,
+        statusBarIconBrightness: Brightness.light,
+      ),
+    ),
   );
 }

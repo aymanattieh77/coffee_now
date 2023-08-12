@@ -1,3 +1,4 @@
+import 'package:coffee_now/core/components/widgets/icon_with_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -27,23 +28,11 @@ class CustomListTile extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: AppPadding.p20),
         child: Row(
           children: [
-            Container(
-              padding: const EdgeInsets.all(AppPadding.p5),
-              decoration: BoxDecoration(
-                color: isDark ? AppColor.fillFieldDark : AppColor.whiteE9,
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child: SizedBox(
-                height: AppSize.s20,
-                width: AppSize.s20,
-                child: SvgPicture.asset(
-                  svgPath,
-                  colorFilter: ColorFilter.mode(
-                    isDark ? AppColor.white : AppColor.dark2D,
-                    BlendMode.srcIn,
-                  ),
-                ),
-              ),
+            IconWithContainer(
+              svgPath: svgPath,
+              backgroundColor:
+                  isDark ? AppColor.fillFieldDark : AppColor.whiteE9,
+              iconColor: isDark ? AppColor.white : AppColor.dark2D,
             ),
             const SizedBox(width: AppSize.s12),
             TextUtils(

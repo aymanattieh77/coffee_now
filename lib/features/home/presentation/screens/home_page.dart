@@ -1,31 +1,60 @@
-import 'package:coffee_now/config/service_locator/service_locator.dart';
-import 'package:coffee_now/config/services/app_cahce.dart';
-import 'package:coffee_now/core/components/widgets/applogo_with_label.dart';
 import 'package:coffee_now/core/resources/resources.dart';
 import 'package:coffee_now/features/home/presentation/widgets/home/floating_basket_button.dart';
+import 'package:coffee_now/features/home/presentation/widgets/home/home_header_section.dart';
+import 'package:coffee_now/features/home/presentation/widgets/home/special_offer_section.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../core/components/widgets/text_utils.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            const AppLogoWithLabel(label: AppStrings.login),
-            const SizedBox(height: AppSize.s36),
-            // CustomTextField(),
-            const SizedBox(height: AppSize.s28),
-            TextUtils(text: getIt<AppCahce>().getUserUid())
-            // CustomTextField(),
-          ],
+        child: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              HomeHeaderSection(),
+              SizedBox(height: AppSize.s12),
+              SpecialOfferSection(),
+              SizedBox(height: AppSize.s18),
+              RecommendedForUserSection(),
+              SizedBox(height: AppSize.s18),
+              PopularBrandSection(),
+              SizedBox(height: AppSize.s18),
+            ],
+          ),
         ),
       ),
-      floatingActionButton: const FloatingBasketButton(),
+      floatingActionButton: FloatingBasketButton(),
     );
+  }
+}
+
+class RecommendedForUserSection extends StatelessWidget {
+  const RecommendedForUserSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class PopularBrandSection extends StatelessWidget {
+  const PopularBrandSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+class CoffeeShopSection extends StatelessWidget {
+  const CoffeeShopSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
