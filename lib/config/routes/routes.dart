@@ -1,3 +1,5 @@
+import 'package:coffee_now/features/home/presentation/controllers/navigation/navigation_cubit.dart';
+import 'package:coffee_now/features/settings/presentaion/screens/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,6 +23,7 @@ abstract class Routes {
   static const register = '/register';
   static const forgetPassword = '/forgetPassword';
   static const home = '/home';
+  static const setting = '/setting';
 }
 
 abstract class RouterGenerator {
@@ -35,7 +38,9 @@ abstract class RouterGenerator {
       case Routes.forgetPassword:
         return AppRouter.screen(_resetPassword());
       case Routes.home:
-        return AppRouter.screen(const HomeScreen());
+        return AppRouter.screen(_homeScreen());
+      case Routes.setting:
+        return AppRouter.screen(const SettingScreen());
 
       default:
         return AppRouter.onUnknownScreen();
@@ -63,6 +68,13 @@ abstract class RouterGenerator {
     return BlocProvider(
       create: (context) => getIt<ResetPasswordBloc>(),
       child: const ForgetPasswordScreen(),
+    );
+  }
+
+  static _homeScreen() {
+    return BlocProvider(
+      create: (context) => NavigationCubit(),
+      child: const HomeScreen(),
     );
   }
 }

@@ -25,7 +25,7 @@ abstract class AssetsIconPath {
   static const String facebook = "${iconPath}facebook.svg";
   static const String googleDark = "${iconPath}google_dark.svg";
   static const String google = "${iconPath}google.svg";
-  static const String favourite = "${iconPath}favourite.svg";
+  static const String favourite = "${iconPath}favourite_circle.svg";
   static const String gallery = "${iconPath}gallery.svg";
   static const String heart = "${iconPath}heart.svg";
   static const String hide = "${iconPath}hide.svg";
@@ -39,6 +39,7 @@ abstract class AssetsIconPath {
   static const String profile = "${iconPath}profile.svg";
   static const String search = "${iconPath}search.svg";
   static const String ticket = "${iconPath}ticket.svg";
+  static const String settings = "${iconPath}setting.svg";
 }
 
 abstract class ImageAssetsPath {

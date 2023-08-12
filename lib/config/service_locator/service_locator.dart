@@ -23,6 +23,6 @@ Future<void> setupAppService() async {
 
 Future<void> setupAppTheme() async {
   final isDarkMode = await getIt<AppCahce>().isDarkMode();
-  getIt.registerLazySingleton<ThemeCubit>(
+  getIt.registerFactory<ThemeCubit>(
       () => ThemeCubit(isDarkMode ? ThemeMode.dark : ThemeMode.light));
 }

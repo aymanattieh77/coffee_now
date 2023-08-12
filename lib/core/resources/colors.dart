@@ -16,7 +16,7 @@ abstract class AppColor {
   static const greyAA = Color(0xffAAAAAA);
 
   static const dark2D = Color(0xff2D2D2D);
-  static const dark3E_30 = Color(0x3C3E3E3E);
+  static const dark3E_60 = Color(0x3C3E3E3E);
   static const dark32 = Color(0xFF323232);
 
   static const coffee = Color(0xff321D0B);

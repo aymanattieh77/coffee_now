@@ -22,7 +22,6 @@ class FloatingBasketButton extends StatelessWidget {
         InkWell(
           onTap: () {
             // TODO Open Basket Screen
-            BlocProvider.of<ThemeCubit>(context).switchAppThemeMode();
           },
           borderRadius: BorderRadius.circular(11),
           child: Stack(

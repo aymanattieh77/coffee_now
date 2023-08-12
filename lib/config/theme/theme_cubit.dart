@@ -9,7 +9,7 @@ class ThemeCubit extends Cubit<ThemeMode> {
 
   final _appCahce = getIt<AppCahce>();
 
-  switchAppThemeMode() async {
+  changeAppThemeMode() async {
     if (await _appCahce.isDarkMode()) {
       _appCahce.setDarkTheme(false);
       emit(ThemeMode.light);
