@@ -140,7 +140,8 @@ class AuthServiceImpl implements AuthService {
         phoneNumber: phoneNumber,
         verificationCompleted: (PhoneAuthCredential credential) async {
           // Auto-verification if the device automatically detects the SMS code
-          print("Phone number verified automatically");
+          print("dssssssssssssssss ${credential.smsCode}");
+          print("dssssssssssssssss ${credential.smsCode}");
         },
         verificationFailed: (FirebaseAuthException e) {
           if (e.code == 'invalid-phone-number') {
@@ -150,11 +151,13 @@ class AuthServiceImpl implements AuthService {
         },
         codeSent: (String verificationId, int? resendToken) {
           verificationId = verificationId;
+          print("vvv $resendToken");
         },
         codeAutoRetrievalTimeout: (String verificationId) {
           verificationId = verificationId;
+          print("ddddddddddd $verificationId");
         },
-        timeout: const Duration(seconds: 60),
+        timeout: const Duration(seconds: 30),
       );
     } on FirebaseAuthException catch (e) {
       throw AuthException(e.message ?? e.toString());

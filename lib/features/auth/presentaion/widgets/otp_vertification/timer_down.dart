@@ -1,46 +1,61 @@
 import 'dart:async';
 
-import 'package:coffee_now/core/components/widgets/text_utils.dart';
-import 'package:coffee_now/core/resources/colors.dart';
-import 'package:coffee_now/core/resources/style.dart';
 import 'package:flutter/material.dart';
 
-class TimerCountDown extends StatefulWidget {
-  const TimerCountDown({super.key, required this.seconds});
-  final int seconds;
+import 'package:coffee_now/core/components/widgets/text_utils.dart';
+import 'package:coffee_now/core/resources/resources.dart';
+
+class CountdownTimerWidget extends StatefulWidget {
+  final int durationInSeconds;
+  final Function() onTimerFinished;
+
+  const CountdownTimerWidget({
+    super.key,
+    required this.durationInSeconds,
+    required this.onTimerFinished,
+  });
+
   @override
-  State<TimerCountDown> createState() => _TimerCountDownState();
+  State<StatefulWidget> createState() => _CountdownTimerWidgetState();
 }
 
-class _TimerCountDownState extends State<TimerCountDown> {
-  late int seconds;
+class _CountdownTimerWidgetState extends State<CountdownTimerWidget> {
+  late int _remainingSeconds;
+  late Timer _timer;
+
   @override
   void initState() {
-    seconds = widget.seconds;
     super.initState();
+    _remainingSeconds = widget.durationInSeconds;
+    _startCountdown();
+  }
+
+  void _startCountdown() {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      setState(() {
+        if (_remainingSeconds > 0) {
+          _remainingSeconds--;
+        } else {
+          timer.cancel();
+          widget.onTimerFinished.call();
+        }
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    countdownTimer(() {});
-
     return TextUtils(
-      text: "00:$seconds",
-      color: AppColor.greyAA,
-      fontWe: FontWe.semiBold,
+      text: '00:$_remainingSeconds',
+      color: AppColor.grey7D,
+      fontSize: FontSizes.f12,
       tr: false,
     );
-  }
-
-  void countdownTimer(Function onTimerFinished) {
-    Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (seconds == 0) {
-        timer.cancel();
-        onTimerFinished();
-      } else {
-        setState(() {});
-        seconds--;
-      }
-    });
   }
 }

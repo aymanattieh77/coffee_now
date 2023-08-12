@@ -1,6 +1,8 @@
 import 'package:coffee_now/config/routes/app_router.dart';
-import 'package:coffee_now/core/components/widgets/back_button.dart';
-import 'package:coffee_now/features/auth/presentaion/controllers/otp_vertification/otp_bloc.dart';
+import 'package:coffee_now/config/routes/routes.dart';
+
+import 'package:coffee_now/features/auth/presentaion/controllers/otp_vertification/otp_cubit.dart';
+import 'package:coffee_now/features/auth/presentaion/widgets/otp_vertification/custom_pincode_text_field.dart';
 import 'package:coffee_now/features/auth/presentaion/widgets/otp_vertification/timer_down.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,7 +11,6 @@ import 'package:coffee_now/core/components/widgets/applogo_with_label.dart';
 import 'package:coffee_now/core/components/widgets/widgets.dart';
 import 'package:coffee_now/core/functions/functions.dart';
 import 'package:coffee_now/core/resources/resources.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 
 class OTPVertificationScreen extends StatefulWidget {
   const OTPVertificationScreen({super.key, required this.phoneNumber});
@@ -19,12 +20,13 @@ class OTPVertificationScreen extends StatefulWidget {
 }
 
 class _OTPVertificationScreenState extends State<OTPVertificationScreen> {
-  late final OTPBloc _optBloc;
-
+  late final OTPCubit _optBloc;
+  final _phoneController = TextEditingController();
   @override
   void initState() {
     super.initState();
-    _optBloc = BlocProvider.of<OTPBloc>(context);
+    _optBloc = BlocProvider.of<OTPCubit>(context);
+    _optBloc.countdownTimer();
   }
 
   @override
@@ -34,17 +36,17 @@ class _OTPVertificationScreenState extends State<OTPVertificationScreen> {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: AppPadding.p20),
-            child: BlocListener<OTPBloc, bool>(
+            child: BlocListener<OTPCubit, OTPState>(
               listener: (context, state) {
-                // if (state is ResetPasswordFailure) {
-                //   _resetPasswordFailure(state.message);
-                // } else if (state is ResetPasswordSuccess) {
-                //   _resetPasswordSuccess();
-                // } else {
-                //   return;
-                // }
+                if (state is OTPFailure) {
+                  _vertifyPhoneFailure(state.message);
+                } else if (state is OTPSuccess) {
+                  _vertifyPhoneSuccess();
+                } else {
+                  return;
+                }
               },
-              child: _registerBody(),
+              child: _otpBody(),
             ),
           ),
         ),
@@ -52,7 +54,7 @@ class _OTPVertificationScreenState extends State<OTPVertificationScreen> {
     );
   }
 
-  Widget _registerBody() {
+  Widget _otpBody() {
     return Column(
       children: [
         const SizedBox(height: AppSize.s8),
@@ -73,52 +75,66 @@ class _OTPVertificationScreenState extends State<OTPVertificationScreen> {
           fontWe: FontWe.semiBold,
         ),
         const SizedBox(height: AppSize.s20),
-        PinCodeTextField(
-          appContext: context,
-          length: 4,
-          keyboardType: TextInputType.number,
-          onChanged: (value) {
-            print(value);
+        CustomPinCodeTextField(controller: _phoneController),
+        const SizedBox(height: AppSize.s18),
+        CountdownTimerWidget(
+          durationInSeconds: 30,
+          onTimerFinished: () {
+            print("finshed");
           },
-          onCompleted: (value) {
-            print("Complete");
-          },
-          pinTheme: PinTheme(
-            activeColor: AppColor.greyAA,
-            activeFillColor: AppColor.whiteF5,
-            shape: PinCodeFieldShape.circle,
-          ),
         ),
         const SizedBox(height: AppSize.s18),
-        // const TextUtils(
-        //   text: "00:30",
-        //   color: AppColor.greyAA,
-        //   fontWe: FontWe.semiBold,
-        // ),
-        const TimerCountDown(seconds: 30),
-        const SizedBox(height: AppSize.s18),
-        const TextUtils(
-          text: AppStrings.doNotSendOTP,
-          color: AppColor.grey7C,
-          fontWe: FontWe.semiBold,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const TextUtils(
+              text: AppStrings.doNotSendOTP,
+              color: AppColor.grey7C,
+              fontWe: FontWe.semiBold,
+            ),
+            const SizedBox(width: AppSize.s3),
+            BlocBuilder<OTPCubit, OTPState>(
+              builder: (context, state) {
+                bool isTimeout = (state is OTPTimeout);
+                return InkWell(
+                  onTap: isTimeout ? () {} : null,
+                  child: TextUtils(
+                    text: "Send OTP",
+                    color: AppColor.oranage.withOpacity(isTimeout ? 1.0 : 0.3),
+                    fontWe: FontWe.semiBold,
+                  ),
+                );
+              },
+            ),
+          ],
         ),
         const SizedBox(height: AppSize.s54),
         CustomElevatedButton(
-          text: AppStrings.resetPassword,
-          onPressed: () {},
+          text: AppStrings.submit,
+          onPressed: () {
+            // _optBloc.vertifyPhoneNumber("+962 7 4541 9562	");
+            AppRouter.pushNamed(
+              context,
+              routeName: Routes.home,
+              replacement: true,
+            );
+          },
         ),
         const SizedBox(height: AppSize.s100),
       ],
     );
   }
 
-  _resetPasswordSuccess() {
+  _vertifyPhoneSuccess() {
     showToastMessage(message: AppStrings.checkYourEmailAddress);
-    AppRouter.pop(context);
+    AppRouter.pushNamed(
+      context,
+      routeName: Routes.home,
+      replacement: true,
+    );
   }
 
-  _resetPasswordFailure(String error) {
-    dismissDialog(context);
+  _vertifyPhoneFailure(String error) {
     showToastMessage(message: error);
   }
 

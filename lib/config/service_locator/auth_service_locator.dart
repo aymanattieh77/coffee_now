@@ -1,4 +1,4 @@
-import 'package:coffee_now/features/auth/presentaion/controllers/otp_vertification/otp_bloc.dart';
+import 'package:coffee_now/features/auth/presentaion/controllers/otp_vertification/otp_cubit.dart';
 import 'package:coffee_now/features/auth/presentaion/controllers/reset_password/reset_password_bloc.dart';
 import 'package:get_it/get_it.dart';
 
@@ -60,12 +60,12 @@ setupResetPasswordBloc() {
 }
 
 setupVerfiyPhone() {
-  if (!GetIt.I.isRegistered<OTPBloc>()) {
+  if (!GetIt.I.isRegistered<OTPCubit>()) {
     getIt.registerLazySingleton<VertifyPhoneUsecase>(
       () => VertifyPhoneUsecase(getIt()),
     );
-    getIt.registerFactory<OTPBloc>(
-      () => OTPBloc(getIt()),
+    getIt.registerFactory<OTPCubit>(
+      () => OTPCubit(getIt()),
     );
   }
 }
