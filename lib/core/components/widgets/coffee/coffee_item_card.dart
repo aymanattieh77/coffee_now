@@ -22,7 +22,7 @@ class CoffeItemCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           color: context.isDark() ? AppColor.darkContainer : AppColor.white,
           boxShadow: [
-            BoxShadow(blurRadius: 30, color: AppColor.black.withOpacity(0.3)),
+            BoxShadow(blurRadius: 30, color: AppColor.black.withOpacity(0.15)),
           ],
         ),
         width: MediaQuery.sizeOf(context).width * 0.40,
@@ -76,7 +76,6 @@ class CoffeItemCard extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: AppSize.s8),
           ],
         ),
       ),

@@ -22,11 +22,12 @@ class RecommendedForUserSection extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: MediaQuery.sizeOf(context).width * 0.62,
+          height: MediaQuery.sizeOf(context).width * 0.620,
           child: ListView.separated(
             physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: AppPadding.p20),
+            padding: const EdgeInsets.symmetric(
+                horizontal: AppPadding.p20, vertical: AppPadding.p5),
             itemCount: 6,
             itemBuilder: (context, index) {
               return const CoffeItemCard();
