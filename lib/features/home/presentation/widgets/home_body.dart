@@ -1,11 +1,7 @@
+import 'package:coffee_now/features/home/presentation/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coffee_now/core/resources/resources.dart';
-import 'package:coffee_now/features/home/presentation/widgets/home/coffee_shop_section.dart';
-import 'package:coffee_now/features/home/presentation/widgets/home/home_header_section.dart';
-import 'package:coffee_now/features/home/presentation/widgets/home/popular_brand_section.dart';
-import 'package:coffee_now/features/home/presentation/widgets/home/recommended_for_user_section.dart';
-import 'package:coffee_now/features/home/presentation/widgets/home/special_offer_section.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
