@@ -1,10 +1,8 @@
-import 'package:coffee_now/config/theme/theme_cubit.dart';
 import 'package:coffee_now/core/extensions/context_extensions.dart';
 import 'package:coffee_now/core/resources/assets.dart';
 import 'package:coffee_now/core/resources/colors.dart';
 import 'package:coffee_now/core/resources/values.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FloatingBasketButton extends StatelessWidget {
