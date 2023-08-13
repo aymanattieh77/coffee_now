@@ -40,6 +40,10 @@ abstract class AssetsIconPath {
   static const String search = "${iconPath}search.svg";
   static const String ticket = "${iconPath}ticket.svg";
   static const String settings = "${iconPath}setting.svg";
+  static const String delivery = "${iconPath}delivery.svg";
+  static const String circle = "${iconPath}circle.svg";
+  static const String star = "${iconPath}star.svg";
+  static const String timeCircle = "${iconPath}time_circle.svg";
 }
 
 abstract class ImageAssetsPath {
