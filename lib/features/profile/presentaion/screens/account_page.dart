@@ -44,24 +44,28 @@ class _AccountPageState extends State<AccountPage> {
                   controller: usernameController,
                   hint: "",
                   label: AppStrings.username,
+                  inputType: TextInputType.name,
                 ),
                 const SizedBox(height: AppSize.s20),
                 CustomTextField(
                   controller: emailController,
                   hint: "",
                   label: AppStrings.email,
+                  inputType: TextInputType.emailAddress,
                 ),
                 const SizedBox(height: AppSize.s20),
                 CustomTextField(
                   controller: phoneController,
                   hint: "",
                   label: AppStrings.phoneNumber,
+                  inputType: TextInputType.phone,
                 ),
                 const SizedBox(height: AppSize.s40),
                 CustomElevatedButton(
                   color: AppColor.whiteE9,
                   textColor: AppColor.red,
                   text: AppStrings.update,
+
                   onPressed: () {}, //Todo Update account info
                 ),
               ],

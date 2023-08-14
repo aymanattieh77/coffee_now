@@ -44,7 +44,7 @@ class ProfilePage extends StatelessWidget {
             label: AppStrings.savedAddress,
             svgPath: AssetsIconPath.location,
             onTap: () {
-              //TODO go TO Saved Address screen
+              AppRouter.pushNamed(context, routeName: Routes.savedAddress);
             },
           ),
           const SizedBox(height: AppSize.s20),

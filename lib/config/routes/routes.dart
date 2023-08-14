@@ -1,3 +1,4 @@
+import 'package:coffee_now/features/address/presentaion/screens/saved_address_screen.dart';
 import 'package:coffee_now/features/cart/presentaion/screens/cart_screen.dart';
 import 'package:coffee_now/features/favourite/presentaion/screens/favourite_screen.dart';
 import 'package:coffee_now/features/home/presentation/controllers/navigation/navigation_cubit.dart';
@@ -30,6 +31,7 @@ abstract class Routes {
   static const favourites = '/favourites';
   static const cart = '/cart';
   static const account = '/account';
+  static const savedAddress = '/savedAddress';
 }
 
 abstract class RouterGenerator {
@@ -53,6 +55,8 @@ abstract class RouterGenerator {
         return AppRouter.screen(_cart());
       case Routes.account:
         return AppRouter.screen(_account());
+      case Routes.savedAddress:
+        return AppRouter.screen(_savedAddress());
 
       default:
         return AppRouter.onUnknownScreen();
@@ -100,6 +104,10 @@ abstract class RouterGenerator {
 
   static _account() {
     return const AccountPage();
+  }
+
+  static _savedAddress() {
+    return const SavedAddressScreen();
   }
 }
 
