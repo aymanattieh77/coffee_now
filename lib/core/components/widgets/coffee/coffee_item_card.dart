@@ -1,7 +1,9 @@
+import 'package:coffee_now/config/routes/app_router.dart';
 import 'package:coffee_now/core/components/widgets/icon_with_container.dart';
 import 'package:coffee_now/core/components/widgets/text_utils.dart';
 import 'package:coffee_now/core/extensions/context_extensions.dart';
 import 'package:coffee_now/core/resources/resources.dart';
+import 'package:coffee_now/features/details/presentaion/screens/item_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -15,6 +17,7 @@ class CoffeItemCard extends StatelessWidget {
     return InkWell(
       onTap: () {
         //TODO Go to Item Details screen
+        AppRouter.push(context, const ItemDetailScreen());
       },
       borderRadius: BorderRadius.circular(7),
       child: Container(
