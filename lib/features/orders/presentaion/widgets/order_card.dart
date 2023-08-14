@@ -1,7 +1,8 @@
+import 'package:flutter/material.dart';
+
 import 'package:coffee_now/core/components/widgets/widgets.dart';
 import 'package:coffee_now/core/extensions/context_extensions.dart';
 import 'package:coffee_now/core/resources/resources.dart';
-import 'package:flutter/material.dart';
 
 class OrderCard extends StatelessWidget {
   const OrderCard({
@@ -29,9 +30,12 @@ class OrderCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Image.asset(ImageAssetsPath.starbuckShop),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(6),
+              child: Image.asset(ImageAssetsPath.starbuckShop),
+            ),
             const SizedBox(width: AppSize.s12),
-            const Expanded(
+            Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -40,12 +44,13 @@ class OrderCard extends StatelessWidget {
                       TextUtils(
                         text:
                             "Starbucks - CSB Mall", // TODO get coffee shop name from firebase
-                        color: AppColor.dark2D,
+                        color:
+                            context.isDark() ? AppColor.white : AppColor.dark2D,
                         fontSize: FontSizes.f12,
                         tr: false,
                       ),
-                      Spacer(),
-                      TextUtils(
+                      const Spacer(),
+                      const TextUtils(
                         text: "28, July 2021", // TODO get date that user buy
                         color: AppColor.grey7D,
                         fontSize: FontSizes.f8,
@@ -53,15 +58,15 @@ class OrderCard extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: AppSize.s3),
-                  TextUtils(
+                  const SizedBox(height: AppSize.s3),
+                  const TextUtils(
                     text: "2 items", //TODO number of items that user bought
                     color: AppColor.grey7D,
                     fontSize: FontSizes.f10,
                     tr: false,
                   ),
-                  SizedBox(height: AppSize.s3),
-                  TextUtils(
+                  const Spacer(),
+                  const TextUtils(
                     text: AppStrings.reorder,
                     color: AppColor.oranage,
                     fontSize: FontSizes.f12,
