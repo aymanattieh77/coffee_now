@@ -1,9 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:coffee_now/config/routes/app_router.dart';
+import 'package:coffee_now/config/routes/routes.dart';
 import 'package:coffee_now/core/extensions/context_extensions.dart';
 import 'package:coffee_now/core/resources/assets.dart';
 import 'package:coffee_now/core/resources/colors.dart';
 import 'package:coffee_now/core/resources/values.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class FloatingBasketButton extends StatelessWidget {
   const FloatingBasketButton({
@@ -19,7 +22,7 @@ class FloatingBasketButton extends StatelessWidget {
         const Spacer(),
         InkWell(
           onTap: () {
-            // TODO Open Basket Screen
+            AppRouter.pushNamed(context, routeName: Routes.cart);
           },
           borderRadius: BorderRadius.circular(11),
           child: Stack(
@@ -55,7 +58,10 @@ class FloatingBasketButton extends StatelessWidget {
                 padding: EdgeInsets.all(AppPadding.p10 - 5),
                 child: Badge(
                   backgroundColor: AppColor.oranage,
-                  label: Text("1", style: TextStyle(color: AppColor.white)),
+                  label: Text("1",
+                      style: TextStyle(
+                          color:
+                              AppColor.white)), //TODO number of items in basket
                 ),
               ),
             ],
