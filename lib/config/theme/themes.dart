@@ -15,6 +15,7 @@ class AppTheme {
     appBarTheme: const AppBarTheme(
       elevation: 0.0,
       centerTitle: true,
+      backgroundColor: AppColor.backgroundLight,
       systemOverlayStyle: SystemUiOverlayStyle(
         statusBarBrightness: Brightness.light,
         statusBarColor: AppColor.white,
@@ -33,6 +34,7 @@ class AppTheme {
     brightness: Brightness.dark,
     hintColor: AppColor.greyAA,
     appBarTheme: const AppBarTheme(
+      backgroundColor: AppColor.backgroundDark,
       elevation: 0.0,
       centerTitle: true,
       systemOverlayStyle: SystemUiOverlayStyle(

@@ -1,3 +1,4 @@
+import 'package:coffee_now/core/extensions/context_extensions.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coffee_now/core/components/widgets/back_circle_button.dart';
@@ -20,7 +21,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         leading: const BackCircleButton(),
         leadingWidth: AppSize.s40,
-        title: TextUtils(text: title ?? "", fontSize: FontSizes.f16),
+        title: TextUtils(
+          text: title ?? "",
+          fontSize: FontSizes.f16,
+          color: context.isDark() ? AppColor.white : AppColor.coffee,
+        ),
       ),
     );
   }
