@@ -36,7 +36,7 @@ class ProfilePage extends StatelessWidget {
             label: AppStrings.favorites,
             svgPath: AssetsIconPath.heart,
             onTap: () {
-              //TODO go to Favourite screen
+              AppRouter.pushNamed(context, routeName: Routes.favourites);
             },
           ),
           const SizedBox(height: AppSize.s20),

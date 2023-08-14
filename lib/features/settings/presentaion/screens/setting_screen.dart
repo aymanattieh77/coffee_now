@@ -37,7 +37,9 @@ class SettingScreen extends StatelessWidget {
           CustomListTile(
             label: AppStrings.privacyPolicy,
             svgPath: AssetsIconPath.document,
-            onTap: () {},
+            onTap: () {
+              //TODO go To
+            },
           ),
           const SizedBox(height: AppSize.s25),
           CustomListTile(

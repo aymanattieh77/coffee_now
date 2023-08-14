@@ -70,8 +70,11 @@ class CoffeItemCard extends StatelessWidget {
                     onTap: () {
                       //TODO add to basket
                     },
-                    child:
-                        const IconWithContainer(svgPath: AssetsIconPath.basket),
+                    child: IconWithContainer(
+                      svgPath: AssetsIconPath.basket,
+                      backgroundColor:
+                          context.isDark() ? AppColor.oranage : AppColor.coffee,
+                    ),
                   ),
                 ],
               ),

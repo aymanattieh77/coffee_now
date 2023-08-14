@@ -1,3 +1,4 @@
+import 'package:coffee_now/features/favourite/presentaion/screens/favourite_screen.dart';
 import 'package:coffee_now/features/home/presentation/controllers/navigation/navigation_cubit.dart';
 import 'package:coffee_now/features/settings/presentaion/screens/setting_screen.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,7 @@ abstract class Routes {
   static const forgetPassword = '/forgetPassword';
   static const home = '/home';
   static const setting = '/setting';
+  static const favourites = '/favourites';
 }
 
 abstract class RouterGenerator {
@@ -41,6 +43,8 @@ abstract class RouterGenerator {
         return AppRouter.screen(_homeScreen());
       case Routes.setting:
         return AppRouter.screen(const SettingScreen());
+      case Routes.favourites:
+        return AppRouter.screen(_favourite());
 
       default:
         return AppRouter.onUnknownScreen();
@@ -76,6 +80,10 @@ abstract class RouterGenerator {
       create: (context) => NavigationCubit(),
       child: const HomeScreen(),
     );
+  }
+
+  static _favourite() {
+    return const FavouriteScreen();
   }
 }
 

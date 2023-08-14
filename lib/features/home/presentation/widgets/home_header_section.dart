@@ -1,3 +1,5 @@
+import 'package:coffee_now/config/routes/app_router.dart';
+import 'package:coffee_now/config/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -17,13 +19,13 @@ class HomeHeaderSection extends StatelessWidget {
         children: [
           _usernameWithLocation(context),
           const Spacer(),
-          _actionButtons()
+          _actionButtons(context)
         ],
       ),
     );
   }
 
-  Widget _actionButtons() {
+  Widget _actionButtons(BuildContext context) {
     return Row(
       children: [
         InkWell(
@@ -38,7 +40,7 @@ class HomeHeaderSection extends StatelessWidget {
         const SizedBox(width: AppSize.s16),
         InkWell(
           onTap: () {
-            //TODO go to favourites screen
+            AppRouter.pushNamed(context, routeName: Routes.favourites);
           },
           child: const IconWithContainer(
             svgPath: AssetsIconPath.heart,
