@@ -28,7 +28,7 @@ class ProfilePage extends StatelessWidget {
             label: AppStrings.editAccountInfo,
             svgPath: AssetsIconPath.edit,
             onTap: () {
-              //TODO go edit account screen
+              AppRouter.pushNamed(context, routeName: Routes.account);
             },
           ),
           const SizedBox(height: AppSize.s20),

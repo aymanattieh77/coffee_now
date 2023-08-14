@@ -45,6 +45,7 @@ abstract class AssetsIconPath {
   static const String star = "${iconPath}star.svg";
   static const String timeCircle = "${iconPath}time_circle.svg";
   static const String clear = "${iconPath}clear.svg";
+  static const String addCircle = "${iconPath}add_circle.svg";
 }
 
 abstract class ImageAssetsPath {

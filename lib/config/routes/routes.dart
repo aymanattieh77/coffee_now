@@ -1,6 +1,7 @@
 import 'package:coffee_now/features/cart/presentaion/screens/cart_screen.dart';
 import 'package:coffee_now/features/favourite/presentaion/screens/favourite_screen.dart';
 import 'package:coffee_now/features/home/presentation/controllers/navigation/navigation_cubit.dart';
+import 'package:coffee_now/features/profile/presentaion/screens/account_page.dart';
 import 'package:coffee_now/features/settings/presentaion/screens/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,6 +29,7 @@ abstract class Routes {
   static const setting = '/setting';
   static const favourites = '/favourites';
   static const cart = '/cart';
+  static const account = '/account';
 }
 
 abstract class RouterGenerator {
@@ -49,6 +51,8 @@ abstract class RouterGenerator {
         return AppRouter.screen(_favourite());
       case Routes.cart:
         return AppRouter.screen(_cart());
+      case Routes.account:
+        return AppRouter.screen(_account());
 
       default:
         return AppRouter.onUnknownScreen();
@@ -92,6 +96,10 @@ abstract class RouterGenerator {
 
   static _cart() {
     return const CartScreen();
+  }
+
+  static _account() {
+    return const AccountPage();
   }
 }
 
