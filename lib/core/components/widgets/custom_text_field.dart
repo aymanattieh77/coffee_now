@@ -37,8 +37,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
           obscureText: isPasswordField ? isObsecure : false,
           keyboardType: widget.inputType,
           maxLines: 1,
-          textDirection:
-              context.isArabicLocale() ? TextDirection.rtl : TextDirection.ltr,
           decoration: _inputDecoration(),
           validator: (value) {
             return formVaildation(value, widget.inputType);

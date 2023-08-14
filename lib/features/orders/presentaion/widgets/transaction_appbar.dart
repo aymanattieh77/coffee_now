@@ -12,7 +12,6 @@ class TransactionAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColor.backgroundDark,
       title: TextUtils(
         text: AppStrings.transactions,
         fontSize: FontSizes.f16,

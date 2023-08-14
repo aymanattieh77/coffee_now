@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -45,7 +46,7 @@ class SearchField extends StatelessWidget {
                         : AppColor.hintField,
                     fontSize: FontSizes.f14,
                   ),
-                  hintText: AppStrings.search,
+                  hintText: AppStrings.search.tr(),
                   enabledBorder: _border(),
                   focusedBorder: _border(),
                 ),
