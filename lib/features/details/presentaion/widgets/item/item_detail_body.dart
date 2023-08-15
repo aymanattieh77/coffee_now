@@ -15,7 +15,7 @@ class ItemDetailBody extends StatelessWidget {
     return const SingleChildScrollView(
       child: Column(
         children: [
-          ImageHeaderSection(),
+          ImageHeaderSection(image: ImageAssetsPath.coffeeItemLarge),
           SizedBox(height: AppSize.s12),
           ItemNameAndPriceSection(),
           CustomDivider(),

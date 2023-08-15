@@ -11,7 +11,7 @@ class FavouriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: CustomAppBar(title: AppStrings.favouriteItems),
-      body: FavouritesGridviewSection(),
+      body: CoffeeItemsGridview(),
     );
   }
 }

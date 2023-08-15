@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:coffee_now/core/components/widgets/coffee/coffee_item_card.dart';
 import 'package:coffee_now/core/resources/resources.dart';
 
-class FavouritesGridviewSection extends StatelessWidget {
-  const FavouritesGridviewSection({
+class CoffeeItemsGridview extends StatelessWidget {
+  const CoffeeItemsGridview({
     super.key,
   });
 

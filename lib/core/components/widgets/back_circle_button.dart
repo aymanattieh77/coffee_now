@@ -16,8 +16,10 @@ class BackCircleButton extends StatelessWidget {
       },
       child: Container(
         padding: const EdgeInsets.all(AppPadding.p5),
-        decoration: const BoxDecoration(
-            color: AppColor.dark3E_60, shape: BoxShape.circle),
+        decoration: BoxDecoration(
+          color: AppColor.dark32.withOpacity(0.7),
+          shape: BoxShape.circle,
+        ),
         child: SvgPicture.asset(
           context.isArabicLocale()
               ? AssetsIconPath.arrowRight

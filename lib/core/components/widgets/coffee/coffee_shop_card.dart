@@ -1,3 +1,5 @@
+import 'package:coffee_now/config/routes/app_router.dart';
+import 'package:coffee_now/features/details/presentaion/screens/coffee_shop_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -10,82 +12,107 @@ class CoffeeShopCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.sizeOf(context).height * 0.15,
-      padding: const EdgeInsets.all(AppPadding.p10),
-      decoration: BoxDecoration(
-        color: context.isDark() ? AppColor.darkContainer : AppColor.white,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Row(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(6),
-            child: Image.asset(ImageAssetsPath.starbuckShop),
-          ),
-          const SizedBox(width: AppSize.s12),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const TextUtils(
-                    text: "Starbucks - CSB Mall", fontSize: FontSizes.f12),
-                const SizedBox(height: AppSize.s6),
-                _distanceWithRateWidget(),
-                const SizedBox(height: AppSize.s6),
-                _deliveryFeeAndOpenCloseTime()
-              ],
+    return InkWell(
+      onTap: () {
+        AppRouter.push(context, const CoffeeShopDetailScreen());
+        //TODO
+      },
+      child: Container(
+        height: MediaQuery.sizeOf(context).height * 0.15,
+        padding: const EdgeInsets.all(AppPadding.p10),
+        decoration: BoxDecoration(
+          color: context.isDark() ? AppColor.darkContainer : AppColor.white,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(6),
+              child: Image.asset(ImageAssetsPath.starbuckShop),
             ),
-          ),
-        ],
+            const SizedBox(width: AppSize.s12),
+            const Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextUtils(
+                      text: "Starbucks - CSB Mall", fontSize: FontSizes.f12),
+                  SizedBox(height: AppSize.s6),
+                  DistanceWithRateWidget(),
+                  SizedBox(height: AppSize.s6),
+                  DeliveryFeeAndOpenCloseTime()
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
+}
 
-  Widget _distanceWithRateWidget() {
+class DeliveryFeeAndOpenCloseTime extends StatelessWidget {
+  const DeliveryFeeAndOpenCloseTime({super.key, this.color});
+  final Color? color;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        SvgPicture.asset(AssetsIconPath.delivery),
+        const SizedBox(width: AppSize.s3),
+        TextUtils(
+            text: "\$5.00",
+            color: color ?? AppColor.greyAA,
+            fontSize: FontSizes.f10),
+        const SizedBox(width: AppSize.s3),
+        SvgPicture.asset(AssetsIconPath.circle),
+        const SizedBox(width: AppSize.s3),
+        SvgPicture.asset(AssetsIconPath.timeCircle),
+        const SizedBox(width: AppSize.s3),
+        TextUtils(
+          text: "10.00 AM - 12.00 PM",
+          color: color ?? AppColor.greyAA,
+          fontSize: FontSizes.f10,
+        ),
+      ],
+    );
+  }
+}
+
+class DistanceWithRateWidget extends StatelessWidget {
+  const DistanceWithRateWidget({super.key, this.color});
+  final Color? color;
+  @override
+  Widget build(BuildContext context) {
     return Row(
       children: [
         SvgPicture.asset(
           AssetsIconPath.location,
           height: AppSize.s12 + 2,
           width: AppSize.s12 + 2,
-          colorFilter: const ColorFilter.mode(AppColor.greyAA, BlendMode.srcIn),
+          colorFilter:
+              ColorFilter.mode(color ?? AppColor.greyAA, BlendMode.srcIn),
         ),
         const SizedBox(width: AppSize.s3),
-        const TextUtils(
-            text: "1.2 KM", color: AppColor.greyAA, fontSize: FontSizes.f10),
+        TextUtils(
+            text: "1.2 KM",
+            color: color ?? AppColor.greyAA,
+            fontSize: FontSizes.f10),
         const SizedBox(width: AppSize.s3),
         SvgPicture.asset(AssetsIconPath.circle),
         const SizedBox(width: AppSize.s3),
         SvgPicture.asset(AssetsIconPath.star),
         const SizedBox(width: AppSize.s3),
-        const TextUtils(
-            text: "4.5", color: AppColor.grey7C, fontSize: FontSizes.f10),
+        TextUtils(
+            text: "4.5",
+            color: color?.withOpacity(0.7) ?? AppColor.grey7C,
+            fontSize: FontSizes.f10),
         const SizedBox(width: AppSize.s3),
-        const TextUtils(
-            text: "(425)", color: AppColor.greyAA, fontSize: FontSizes.f10),
-      ],
-    );
-  }
-
-  Widget _deliveryFeeAndOpenCloseTime() {
-    return Row(
-      children: [
-        SvgPicture.asset(AssetsIconPath.delivery),
-        const SizedBox(width: AppSize.s3),
-        const TextUtils(
-            text: "\$5.00", color: AppColor.greyAA, fontSize: FontSizes.f10),
-        const SizedBox(width: AppSize.s3),
-        SvgPicture.asset(AssetsIconPath.circle),
-        const SizedBox(width: AppSize.s3),
-        SvgPicture.asset(AssetsIconPath.timeCircle),
-        const SizedBox(width: AppSize.s3),
-        const TextUtils(
-          text: "10.00 AM - 12.00 PM",
-          color: AppColor.greyAA,
-          fontSize: FontSizes.f10,
-        ),
+        TextUtils(
+            text: "(425)",
+            color: color ?? AppColor.greyAA,
+            fontSize: FontSizes.f10),
       ],
     );
   }

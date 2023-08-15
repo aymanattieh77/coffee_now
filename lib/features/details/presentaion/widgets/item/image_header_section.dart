@@ -7,8 +7,11 @@ import 'package:coffee_now/core/resources/resources.dart';
 class ImageHeaderSection extends StatelessWidget {
   const ImageHeaderSection({
     super.key,
+    this.child,
+    required this.image,
   });
-
+  final Widget? child;
+  final String image;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -20,7 +23,7 @@ class ImageHeaderSection extends StatelessWidget {
           AspectRatio(
             aspectRatio: 4 / 3,
             child: Image.asset(
-              ImageAssetsPath.coffeeItemLarge,
+              image,
               fit: BoxFit.cover,
             ),
           ),
@@ -37,6 +40,12 @@ class ImageHeaderSection extends StatelessWidget {
               ],
             ),
           ),
+          if (child != null)
+            Positioned(
+              left: AppSize.s20,
+              bottom: AppSize.s30,
+              child: child!,
+            )
         ],
       ),
     );
