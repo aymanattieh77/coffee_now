@@ -21,6 +21,7 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   await serviceLocatorStart();
   Bloc.observer = MyBLocObserver();
+
   runApp(
     Phoenix(
       child: EasyLocalization(

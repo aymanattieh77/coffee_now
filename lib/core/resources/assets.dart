@@ -47,6 +47,8 @@ abstract class AssetsIconPath {
   static const String clear = "${iconPath}clear.svg";
   static const String addCircle = "${iconPath}add_circle.svg";
   static const String locationFilled = "${iconPath}location_filled.svg";
+  static const String cash = "${iconPath}cash.svg";
+  static const String paymentMethods = "${iconPath}payment_methods.svg";
 }
 
 abstract class ImageAssetsPath {

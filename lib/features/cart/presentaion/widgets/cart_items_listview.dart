@@ -15,14 +15,8 @@ class CartItemsListview extends StatelessWidget {
       itemBuilder: (context, index) {
         return const ItemCart(); //TODO get items from firebase
       },
-      separatorBuilder: (context, index) => const SizedBox(
-        height: AppSize.s12,
-        child: Divider(
-          thickness: 2,
-          color: AppColor.greyAA,
-        ),
-      ),
-      itemCount: 4,
+      separatorBuilder: (context, index) => const SizedBox(height: AppSize.s3),
+      itemCount: 1,
     );
   }
 }

@@ -1,10 +1,11 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:coffee_now/config/theme/theme_cubit.dart';
 import 'package:coffee_now/core/components/widgets/custom_appbar.dart';
 import 'package:coffee_now/core/components/widgets/text_utils.dart';
 import 'package:coffee_now/core/extensions/context_extensions.dart';
 import 'package:coffee_now/core/resources/resources.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DarkModeScreen extends StatelessWidget {
   const DarkModeScreen({super.key});
@@ -18,8 +19,7 @@ class DarkModeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: AppSize.s8),
-            const SizedBox(height: AppSize.s10),
+            const SizedBox(height: AppSize.s20),
             Row(
               children: [
                 const TextUtils(text: AppStrings.darkMode),

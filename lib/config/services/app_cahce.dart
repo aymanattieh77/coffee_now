@@ -11,7 +11,7 @@ abstract class AppCahce {
   Future<String> getCurrentAppLanguage();
   Future<void> changeAppLanguage(LanugageType lanugageType);
   Future<Locale> getLocale();
-  Future<bool> isDarkMode();
+  bool isDarkMode();
   Future<void> setDarkTheme(bool isDark);
   Future<void> saveUserUid(String userUid);
   String getUserUid();
@@ -46,7 +46,7 @@ class AppCacheImpl implements AppCahce {
   }
 
   @override
-  Future<bool> isDarkMode() async {
+  bool isDarkMode() {
     return _prefs.getBool(darkModeKey) ?? false;
   }
 
