@@ -1,12 +1,12 @@
-import 'package:coffee_now/features/details/presentaion/widgets/item/custom_divider.dart';
+import 'package:coffee_now/features/details/presentaion/widgets/coffee_item/custom_divider.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coffee_now/core/resources/resources.dart';
-import 'package:coffee_now/features/details/presentaion/widgets/item/image_header_section.dart';
-import 'package:coffee_now/features/details/presentaion/widgets/item/widgets.dart';
+import 'package:coffee_now/features/details/presentaion/widgets/coffee_item/image_header_section.dart';
+import 'package:coffee_now/features/details/presentaion/widgets/coffee_item/widgets.dart';
 
-class ItemDetailBody extends StatelessWidget {
-  const ItemDetailBody({
+class CoffeeItemDetailBody extends StatelessWidget {
+  const CoffeeItemDetailBody({
     super.key,
   });
 
