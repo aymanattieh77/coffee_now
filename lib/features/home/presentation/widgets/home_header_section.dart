@@ -1,5 +1,6 @@
 import 'package:coffee_now/config/routes/app_router.dart';
 import 'package:coffee_now/config/routes/routes.dart';
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -32,8 +33,8 @@ class HomeHeaderSection extends StatelessWidget {
           onTap: () {
             //TODO go to ticket
           },
-          child: const IconWithContainer(
-            svgPath: AssetsIconPath.ticket,
+          child: IconWithContainer(
+            svgPath: Assets.icons.ticket,
             backgroundColor: AppColor.coffee,
           ),
         ),
@@ -42,8 +43,8 @@ class HomeHeaderSection extends StatelessWidget {
           onTap: () {
             AppRouter.pushNamed(context, routeName: Routes.favourites);
           },
-          child: const IconWithContainer(
-            svgPath: AssetsIconPath.heart,
+          child: IconWithContainer(
+            svgPath: Assets.icons.heart,
             backgroundColor: AppColor.coffee,
           ),
         ),
@@ -77,7 +78,7 @@ class HomeHeaderSection extends StatelessWidget {
         Row(
           children: [
             SvgPicture.asset(
-              AssetsIconPath.location,
+              Assets.icons.location,
               height: AppSize.s16,
               width: AppSize.s16,
               colorFilter:

@@ -2,6 +2,7 @@ import 'package:coffee_now/core/components/widgets/custom_elevated_button.dart';
 import 'package:coffee_now/core/components/widgets/text_utils.dart';
 import 'package:coffee_now/core/extensions/context_extensions.dart';
 import 'package:coffee_now/core/resources/resources.dart';
+import 'package:coffee_now/gen/assets.gen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -14,7 +15,7 @@ class LoadingStateRender extends StatelessWidget {
     return Container(
       color: Theme.of(context).scaffoldBackgroundColor,
       child: Center(
-        child: Lottie.asset(AnimationAssetsPath.loading),
+        child: Lottie.asset(Assets.animations.animationLoading),
       ),
     );
   }
@@ -33,7 +34,7 @@ class ErrorStateRender extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FullScreenDialogWidget(
-      animationPath: AnimationAssetsPath.error2,
+      animationPath: Assets.animations.animationError2,
       title: AppStrings.errorHappened,
       message: errorMessage,
       primaryButtonText: AppStrings.tryAgain,
@@ -56,7 +57,7 @@ class SuccessStateRender extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FullScreenDialogWidget(
-      animationPath: AnimationAssetsPath.success,
+      animationPath: Assets.animations.animationSuccess,
       title: AppStrings.yourOrderAccepted,
       message: AppStrings.yourItemsPlacedInWay,
       primaryButtonText: AppStrings.trackOrder,

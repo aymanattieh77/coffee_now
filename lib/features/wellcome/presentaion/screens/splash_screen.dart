@@ -1,7 +1,7 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:coffee_now/core/resources/assets.dart';
 import 'package:coffee_now/core/resources/values.dart';
 import 'package:coffee_now/features/wellcome/presentaion/controllers/splash_viewmodel.dart';
 
@@ -51,9 +51,9 @@ class _SplashScreenState extends State<SplashScreen>
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  SvgPicture.asset(AssetsIconPath.appLogoLight),
+                  SvgPicture.asset(Assets.icons.applogoLight),
                   const SizedBox(height: AppSize.s12),
-                  SvgPicture.asset(AssetsIconPath.coffeeNow),
+                  SvgPicture.asset(Assets.icons.coffeeNow),
                 ],
               ),
             );
@@ -66,7 +66,7 @@ class _SplashScreenState extends State<SplashScreen>
       height: MediaQuery.sizeOf(context).height * 0.70,
       width: MediaQuery.sizeOf(context).width,
       child: Image.asset(
-        ImageAssetsPath.maskImage,
+        Assets.images.maskGroup.path,
         fit: BoxFit.fill,
         alignment: Alignment.bottomCenter,
       ),

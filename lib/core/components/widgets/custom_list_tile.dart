@@ -1,10 +1,10 @@
 import 'package:coffee_now/core/components/widgets/icon_with_container.dart';
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:coffee_now/core/components/widgets/text_utils.dart';
 import 'package:coffee_now/core/extensions/context_extensions.dart';
-import 'package:coffee_now/core/resources/assets.dart';
 import 'package:coffee_now/core/resources/colors.dart';
 import 'package:coffee_now/core/resources/values.dart';
 
@@ -41,9 +41,7 @@ class CustomListTile extends StatelessWidget {
             ),
             const Spacer(),
             SvgPicture.asset(
-              isArabicLocale
-                  ? AssetsIconPath.arrowLeft
-                  : AssetsIconPath.arrowRight,
+              isArabicLocale ? Assets.icons.arrowLeft : Assets.icons.arrowRight,
               colorFilter: const ColorFilter.mode(
                 AppColor.grey7D,
                 BlendMode.srcIn,

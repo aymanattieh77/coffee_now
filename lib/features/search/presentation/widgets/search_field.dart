@@ -1,3 +1,4 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -27,7 +28,7 @@ class SearchField extends StatelessWidget {
               width: AppSize.s25,
               height: AppSize.s25,
               child: SvgPicture.asset(
-                AssetsIconPath.search,
+                Assets.icons.search,
                 colorFilter:
                     const ColorFilter.mode(AppColor.greyAA, BlendMode.srcIn),
               ),

@@ -1,10 +1,10 @@
 import 'package:coffee_now/core/components/widgets/text_utils.dart';
 import 'package:coffee_now/core/extensions/context_extensions.dart';
-import 'package:coffee_now/core/resources/assets.dart';
 import 'package:coffee_now/core/resources/colors.dart';
 import 'package:coffee_now/core/resources/strings.dart';
 import 'package:coffee_now/core/resources/style.dart';
 import 'package:coffee_now/core/resources/values.dart';
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -31,7 +31,7 @@ class CustomBottomSheet extends StatelessWidget {
             onTap: () {},
             child: Row(
               children: [
-                SvgPicture.asset(AssetsIconPath.gallery,
+                SvgPicture.asset(Assets.icons.gallery,
                     width: AppSize.s40, height: AppSize.s28),
                 const SizedBox(width: AppSize.s20),
                 const TextUtils(
@@ -44,7 +44,7 @@ class CustomBottomSheet extends StatelessWidget {
           const SizedBox(height: AppSize.s12),
           Row(
             children: [
-              SvgPicture.asset(AssetsIconPath.camera,
+              SvgPicture.asset(Assets.icons.camera,
                   width: AppSize.s40, height: AppSize.s28),
               const SizedBox(width: AppSize.s20),
               const TextUtils(

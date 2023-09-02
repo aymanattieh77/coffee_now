@@ -1,7 +1,8 @@
 import 'package:coffee_now/core/extensions/context_extensions.dart';
-import 'package:coffee_now/core/resources/assets.dart';
+
 import 'package:coffee_now/core/resources/colors.dart';
 import 'package:coffee_now/core/resources/values.dart';
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -33,10 +34,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
           currentIndex: currentIndex,
           onTap: onTap,
           items: [
-            _bottomNavigationBarItem(AssetsIconPath.home),
-            _bottomNavigationBarItem(AssetsIconPath.search),
-            _bottomNavigationBarItem(AssetsIconPath.document),
-            _bottomNavigationBarItem(AssetsIconPath.profile),
+            _bottomNavigationBarItem(Assets.icons.home),
+            _bottomNavigationBarItem(Assets.icons.search),
+            _bottomNavigationBarItem(Assets.icons.document),
+            _bottomNavigationBarItem(Assets.icons.profile),
           ],
         ),
       ),

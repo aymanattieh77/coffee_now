@@ -5,6 +5,7 @@ import 'package:coffee_now/core/extensions/context_extensions.dart';
 import 'package:coffee_now/core/resources/resources.dart';
 import 'package:coffee_now/features/address/presentaion/widgets/address_card.dart';
 import 'package:coffee_now/features/cart/presentaion/widgets/cart_item.dart';
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -80,7 +81,7 @@ class PaymentDetailSection extends StatelessWidget {
                 SizedBox(
                   height: AppSize.s40,
                   width: AppSize.s40,
-                  child: SvgPicture.asset(AssetsIconPath.cash),
+                  child: SvgPicture.asset(Assets.icons.cash),
                 ),
                 const SizedBox(width: AppSize.s10),
                 const TextUtils(text: AppStrings.cash),
@@ -96,7 +97,7 @@ class PaymentDetailSection extends StatelessWidget {
                 SizedBox(
                     height: AppSize.s40,
                     width: AppSize.s40,
-                    child: SvgPicture.asset(AssetsIconPath.paymentMethods)),
+                    child: SvgPicture.asset(Assets.icons.paymentMethods)),
                 const SizedBox(width: AppSize.s10),
                 const TextUtils(text: AppStrings.creditDebitCard),
                 const Spacer(),
@@ -194,7 +195,7 @@ class OrderDeliverySection extends StatelessWidget {
                   width: AppSize.s36,
                   height: AppSize.s36,
                   child: SvgPicture.asset(
-                    AssetsIconPath.delivery,
+                    Assets.icons.delivery,
                     colorFilter: const ColorFilter.mode(
                       AppColor.oranage,
                       BlendMode.srcIn,

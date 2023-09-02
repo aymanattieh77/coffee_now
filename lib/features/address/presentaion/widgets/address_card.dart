@@ -1,3 +1,4 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -28,7 +29,7 @@ class AddressCard extends StatelessWidget {
         ),
         child: Row(
           children: [
-            SvgPicture.asset(AssetsIconPath.locationFilled),
+            SvgPicture.asset(Assets.icons.locationFilled),
             const SizedBox(width: AppSize.s16),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +51,7 @@ class AddressCard extends StatelessWidget {
               ],
             ),
             const Spacer(),
-            SvgPicture.asset(AssetsIconPath.arrowRight)
+            SvgPicture.asset(Assets.icons.arrowRight)
           ],
         ),
       ),

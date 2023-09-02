@@ -1,3 +1,4 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coffee_now/core/components/widgets/widgets.dart';
@@ -37,7 +38,7 @@ class RecentSearchesSection extends StatelessWidget {
         },
         child: Row(
           children: [
-            SvgPicture.asset(AssetsIconPath.timeCircle),
+            SvgPicture.asset(Assets.icons.timeCircle),
             const SizedBox(width: AppSize.s20),
             TextUtils(text: searchTerm, color: AppColor.greyAA),
             const Spacer(),
@@ -47,7 +48,7 @@ class RecentSearchesSection extends StatelessWidget {
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(AppPadding.p10),
-                  child: SvgPicture.asset(AssetsIconPath.clear),
+                  child: SvgPicture.asset(Assets.icons.clear),
                 )),
           ],
         ),

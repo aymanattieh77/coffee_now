@@ -1,3 +1,4 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +17,7 @@ class GoogleFacebookSignIn extends StatelessWidget {
       children: [
         _iconButton(
           isDark: isDark,
-          imagePath: ImageAssetsPath.google,
+          imagePath: Assets.images.google.path,
           onPress: () {
             BlocProvider.of<LoginBloc>(context).add(GoogleSign());
           },
@@ -24,7 +25,7 @@ class GoogleFacebookSignIn extends StatelessWidget {
         const SizedBox(width: AppSize.s54),
         _iconButton(
           isDark: isDark,
-          imagePath: ImageAssetsPath.facebook,
+          imagePath: Assets.images.facebook.path,
           onPress: () {
             BlocProvider.of<LoginBloc>(context).add(FacebookSign());
           },

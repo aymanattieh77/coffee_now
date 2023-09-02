@@ -4,6 +4,7 @@ import 'package:coffee_now/core/components/widgets/text_utils.dart';
 import 'package:coffee_now/core/extensions/context_extensions.dart';
 import 'package:coffee_now/core/resources/resources.dart';
 import 'package:coffee_now/features/details/presentaion/screens/item_detail_screen.dart';
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -39,12 +40,12 @@ class CoffeItemCard extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.asset(
-                    ImageAssetsPath.coffeeItem,
+                    Assets.images.coffeeItem.path,
                   ), //TODO get item image from firebase
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: SvgPicture.asset(AssetsIconPath.favourite),
+                  icon: SvgPicture.asset(Assets.icons.favouriteCircle),
                 ),
               ],
             ),
@@ -74,7 +75,7 @@ class CoffeItemCard extends StatelessWidget {
                       //TODO add to basket
                     },
                     child: IconWithContainer(
-                      svgPath: AssetsIconPath.basket,
+                      svgPath: Assets.icons.basket,
                       backgroundColor:
                           context.isDark() ? AppColor.oranage : AppColor.coffee,
                     ),

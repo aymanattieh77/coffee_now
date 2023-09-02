@@ -1,3 +1,4 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coffee_now/core/components/widgets/text_utils.dart';
@@ -33,8 +34,8 @@ class BannerOfferWidget extends StatelessWidget {
             child: SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.25,
               width: MediaQuery.sizeOf(context).width,
-              child:
-                  Image.asset(ImageAssetsPath.container, fit: BoxFit.contain),
+              child: Image.asset(Assets.images.container.path,
+                  fit: BoxFit.contain),
             ),
           ),
           Padding(

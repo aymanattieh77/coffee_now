@@ -1,3 +1,4 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -35,7 +36,7 @@ class ImageHeaderSection extends StatelessWidget {
                 const Spacer(),
                 IconButton(
                   onPressed: () {},
-                  icon: SvgPicture.asset(AssetsIconPath.favourite),
+                  icon: SvgPicture.asset(Assets.icons.favouriteCircle),
                 ),
               ],
             ),

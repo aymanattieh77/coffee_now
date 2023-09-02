@@ -1,3 +1,4 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -27,7 +28,7 @@ class ProfilePicture extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(AppPadding.p10),
             child: SvgPicture.asset(
-              AssetsIconPath.addCircle,
+              Assets.icons.addCircle,
               height: AppSize.s20,
               width: AppSize.s20,
             ),

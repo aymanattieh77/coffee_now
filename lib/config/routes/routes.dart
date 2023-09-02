@@ -1,4 +1,5 @@
 import 'package:coffee_now/features/address/presentaion/screens/saved_address_screen.dart';
+import 'package:coffee_now/features/admin/admin_screen.dart';
 import 'package:coffee_now/features/cart/presentaion/screens/cart_screen.dart';
 import 'package:coffee_now/features/favourite/presentaion/screens/favourite_screen.dart';
 import 'package:coffee_now/features/home/presentation/controllers/navigation/navigation_cubit.dart';
@@ -32,6 +33,7 @@ abstract class Routes {
   static const cart = '/cart';
   static const account = '/account';
   static const savedAddress = '/savedAddress';
+  static const admin = '/admin';
 }
 
 abstract class RouterGenerator {
@@ -57,6 +59,8 @@ abstract class RouterGenerator {
         return AppRouter.screen(_account());
       case Routes.savedAddress:
         return AppRouter.screen(_savedAddress());
+      case Routes.admin:
+        return AppRouter.screen(const AdminScreen());
 
       default:
         return AppRouter.onUnknownScreen();

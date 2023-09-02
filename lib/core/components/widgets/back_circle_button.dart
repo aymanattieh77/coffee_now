@@ -1,3 +1,4 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -22,8 +23,8 @@ class BackCircleButton extends StatelessWidget {
         ),
         child: SvgPicture.asset(
           context.isArabicLocale()
-              ? AssetsIconPath.arrowRight
-              : AssetsIconPath.arrowLeft,
+              ? Assets.icons.arrowRight
+              : Assets.icons.arrowLeft,
           height: AppSize.s20,
           width: AppSize.s20,
           colorFilter: const ColorFilter.mode(AppColor.white, BlendMode.srcIn),

@@ -1,4 +1,5 @@
 import 'package:coffee_now/features/details/presentaion/widgets/coffee_item/custom_divider.dart';
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coffee_now/core/resources/resources.dart';
@@ -12,21 +13,21 @@ class CoffeeItemDetailBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       child: Column(
         children: [
-          ImageHeaderSection(image: ImageAssetsPath.coffeeItemLarge),
-          SizedBox(height: AppSize.s12),
-          ItemNameAndPriceSection(),
-          CustomDivider(),
-          SizedBox(height: AppSize.s12),
-          SugarLevelSection(),
-          CustomDivider(),
-          SizedBox(height: AppSize.s12),
-          SpecialnstructionsSection(),
-          SizedBox(height: AppSize.s28),
-          ItemCountSection(),
-          SizedBox(height: AppSize.s88),
+          ImageHeaderSection(image: Assets.images.coffeeItemLarge.path),
+          const SizedBox(height: AppSize.s12),
+          const ItemNameAndPriceSection(),
+          const CustomDivider(),
+          const SizedBox(height: AppSize.s12),
+          const SugarLevelSection(),
+          const CustomDivider(),
+          const SizedBox(height: AppSize.s12),
+          const SpecialnstructionsSection(),
+          const SizedBox(height: AppSize.s28),
+          const ItemCountSection(),
+          const SizedBox(height: AppSize.s88),
         ],
       ),
     );

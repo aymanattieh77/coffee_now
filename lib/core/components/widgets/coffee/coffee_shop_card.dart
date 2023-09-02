@@ -1,5 +1,6 @@
 import 'package:coffee_now/config/routes/app_router.dart';
 import 'package:coffee_now/features/details/presentaion/screens/coffee_shop_details_screen.dart';
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -28,7 +29,7 @@ class CoffeeShopCard extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
-              child: Image.asset(ImageAssetsPath.starbuckShop),
+              child: Image.asset(Assets.images.starbucksShop.path),
             ),
             const SizedBox(width: AppSize.s12),
             const Expanded(
@@ -59,16 +60,16 @@ class DeliveryFeeAndOpenCloseTime extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SvgPicture.asset(AssetsIconPath.delivery),
+        SvgPicture.asset(Assets.icons.delivery),
         const SizedBox(width: AppSize.s3),
         TextUtils(
             text: "\$5.00",
             color: color ?? AppColor.greyAA,
             fontSize: FontSizes.f10),
         const SizedBox(width: AppSize.s3),
-        SvgPicture.asset(AssetsIconPath.circle),
+        SvgPicture.asset(Assets.icons.circle),
         const SizedBox(width: AppSize.s3),
-        SvgPicture.asset(AssetsIconPath.timeCircle),
+        SvgPicture.asset(Assets.icons.timeCircle),
         const SizedBox(width: AppSize.s3),
         TextUtils(
           text: "10.00 AM - 12.00 PM",
@@ -88,7 +89,7 @@ class DistanceWithRateWidget extends StatelessWidget {
     return Row(
       children: [
         SvgPicture.asset(
-          AssetsIconPath.location,
+          Assets.icons.location,
           height: AppSize.s12 + 2,
           width: AppSize.s12 + 2,
           colorFilter:
@@ -100,9 +101,9 @@ class DistanceWithRateWidget extends StatelessWidget {
             color: color ?? AppColor.greyAA,
             fontSize: FontSizes.f10),
         const SizedBox(width: AppSize.s3),
-        SvgPicture.asset(AssetsIconPath.circle),
+        SvgPicture.asset(Assets.icons.circle),
         const SizedBox(width: AppSize.s3),
-        SvgPicture.asset(AssetsIconPath.star),
+        SvgPicture.asset(Assets.icons.star),
         const SizedBox(width: AppSize.s3),
         TextUtils(
             text: "4.5",

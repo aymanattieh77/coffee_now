@@ -1,5 +1,6 @@
 import 'package:coffee_now/config/routes/app_router.dart';
 import 'package:coffee_now/config/routes/routes.dart';
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coffee_now/core/components/widgets/custom_list_tile.dart';
@@ -26,7 +27,7 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(height: AppSize.s75),
           CustomListTile(
             label: AppStrings.editAccountInfo,
-            svgPath: AssetsIconPath.edit,
+            svgPath: Assets.icons.edit,
             onTap: () {
               AppRouter.pushNamed(context, routeName: Routes.account);
             },
@@ -34,7 +35,7 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(height: AppSize.s20),
           CustomListTile(
             label: AppStrings.favorites,
-            svgPath: AssetsIconPath.heart,
+            svgPath: Assets.icons.heart,
             onTap: () {
               AppRouter.pushNamed(context, routeName: Routes.favourites);
             },
@@ -42,7 +43,7 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(height: AppSize.s20),
           CustomListTile(
             label: AppStrings.savedAddress,
-            svgPath: AssetsIconPath.location,
+            svgPath: Assets.icons.location,
             onTap: () {
               AppRouter.pushNamed(context, routeName: Routes.savedAddress);
             },
@@ -50,7 +51,7 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(height: AppSize.s20),
           CustomListTile(
             label: AppStrings.rewardsORCoupon,
-            svgPath: AssetsIconPath.discount,
+            svgPath: Assets.icons.discount,
             onTap: () {
               //TODO go TO rewardsORCoupon screen
             },
@@ -58,7 +59,7 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(height: AppSize.s20),
           CustomListTile(
             label: AppStrings.settings,
-            svgPath: AssetsIconPath.settings,
+            svgPath: Assets.icons.setting,
             onTap: () {
               AppRouter.pushNamed(context, routeName: Routes.setting);
             },

@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:coffee_now/core/errors/exceptions.dart';
 import 'package:coffee_now/core/errors/failures.dart';
 import 'package:coffee_now/core/resources/strings.dart';
@@ -124,3 +122,5 @@ class AuthRepositoryImpl implements AuthRepository {
     }
   }
 }
+
+class Void {}

@@ -1,10 +1,11 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:coffee_now/config/routes/app_router.dart';
 import 'package:coffee_now/config/routes/routes.dart';
 import 'package:coffee_now/core/extensions/context_extensions.dart';
-import 'package:coffee_now/core/resources/assets.dart';
+
 import 'package:coffee_now/core/resources/colors.dart';
 import 'package:coffee_now/core/resources/values.dart';
 
@@ -47,7 +48,7 @@ class FloatingBasketButton extends StatelessWidget {
                   ],
                 ),
                 child: SvgPicture.asset(
-                  AssetsIconPath.basket,
+                  Assets.icons.basket,
                   colorFilter: ColorFilter.mode(
                     isDark ? AppColor.white : AppColor.coffee,
                     BlendMode.srcIn,

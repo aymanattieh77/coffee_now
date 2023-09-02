@@ -1,12 +1,13 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:coffee_now/core/components/widgets/custom_elevated_button.dart';
 import 'package:coffee_now/core/components/widgets/text_utils.dart';
 import 'package:coffee_now/core/extensions/context_extensions.dart';
-import 'package:coffee_now/core/resources/assets.dart';
 import 'package:coffee_now/core/resources/colors.dart';
 import 'package:coffee_now/core/resources/style.dart';
 import 'package:coffee_now/core/resources/values.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:coffee_now/gen/assets.gen.dart';
 
 showPopUpDialog(BuildContext context,
     {required String confirmText,
@@ -19,11 +20,9 @@ showPopUpDialog(BuildContext context,
     builder: (context) {
       return AlertDialog(
         actionsAlignment: MainAxisAlignment.spaceEvenly,
-        icon: SvgPicture.asset(
-          context.isDark()
-              ? AssetsIconPath.appLogoDark
-              : AssetsIconPath.appLogoLight,
-        ),
+        icon: SvgPicture.asset(context.isDark()
+            ? Assets.icons.applogoDark
+            : Assets.icons.applogoLight),
         actions: [
           CustomElevatedButton(
             text: cancelText,

@@ -1,3 +1,4 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -15,8 +16,8 @@ class AppLogoWithLabel extends StatelessWidget {
       children: [
         SvgPicture.asset(
           context.isDark()
-              ? AssetsIconPath.appLogoDark
-              : AssetsIconPath.appLogoLight,
+              ? Assets.icons.applogoDark
+              : Assets.icons.applogoLight,
         ),
         const SizedBox(height: AppSize.s16),
         TextUtils(

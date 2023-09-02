@@ -1,3 +1,4 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coffee_now/core/resources/resources.dart';
@@ -10,25 +11,25 @@ class CoffeeShopDetailBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
+    return CustomScrollView(
       primary: true,
       slivers: [
         SliverToBoxAdapter(
           child: ImageHeaderSection(
-            image: ImageAssetsPath.starbuckShop,
-            child: CoffeeShopInfo(),
+            image: Assets.images.starbucksShop.path,
+            child: const CoffeeShopInfo(),
           ),
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: SizedBox(height: AppSize.s10),
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: CoffeeCategoriesSection(),
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: SizedBox(height: AppSize.s10),
         ),
-        SliverFillRemaining(child: CoffeeShopItemsGridview())
+        const SliverFillRemaining(child: CoffeeShopItemsGridview())
       ],
     );
   }

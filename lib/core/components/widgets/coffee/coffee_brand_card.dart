@@ -1,5 +1,6 @@
 import 'package:coffee_now/core/extensions/context_extensions.dart';
 import 'package:coffee_now/core/resources/resources.dart';
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class CoffeBrandCard extends StatelessWidget {
@@ -26,8 +27,7 @@ class CoffeBrandCard extends StatelessWidget {
         ),
         child: SizedBox(
           child: Image.asset(
-            //TODO get brand from Firebase
-            ImageAssetsPath.starbucksLogo,
+            Assets.images.starbucksLogo.path,
             fit: BoxFit.contain,
           ),
         ),

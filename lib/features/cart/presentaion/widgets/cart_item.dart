@@ -1,3 +1,4 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coffee_now/core/components/widgets/widgets.dart';
@@ -23,7 +24,7 @@ class ItemCart extends StatelessWidget {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(6),
-                    child: Image.asset(ImageAssetsPath.coffeeItem),
+                    child: Image.asset(Assets.images.coffeeItem.path),
                   ),
                   const SizedBox(width: AppSize.s12),
                   Expanded(

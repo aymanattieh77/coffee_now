@@ -1,3 +1,4 @@
+import 'package:coffee_now/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:coffee_now/core/components/widgets/widgets.dart';
@@ -32,7 +33,7 @@ class OrderCard extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(6),
-              child: Image.asset(ImageAssetsPath.starbuckShop),
+              child: Image.asset(Assets.images.starbucksShop.path),
             ),
             const SizedBox(width: AppSize.s12),
             Expanded(
