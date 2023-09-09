@@ -3,6 +3,7 @@ import 'package:coffee_now/features/admin/admin_screen.dart';
 import 'package:coffee_now/features/cart/presentaion/screens/cart_screen.dart';
 import 'package:coffee_now/features/favourite/presentaion/screens/favourite_screen.dart';
 import 'package:coffee_now/features/home/presentation/controllers/navigation/navigation_cubit.dart';
+import 'package:coffee_now/features/notifications/presentation/screens/notification_screen.dart';
 import 'package:coffee_now/features/profile/presentaion/screens/account_page.dart';
 import 'package:coffee_now/features/settings/presentaion/screens/setting_screen.dart';
 import 'package:flutter/material.dart';
@@ -34,6 +35,7 @@ abstract class Routes {
   static const account = '/account';
   static const savedAddress = '/savedAddress';
   static const admin = '/admin';
+  static const notification = '/notification';
 }
 
 abstract class RouterGenerator {
@@ -61,6 +63,8 @@ abstract class RouterGenerator {
         return AppRouter.screen(_savedAddress());
       case Routes.admin:
         return AppRouter.screen(const AdminScreen());
+      case Routes.notification:
+        return AppRouter.screen(const NotificationScreen());
 
       default:
         return AppRouter.onUnknownScreen();

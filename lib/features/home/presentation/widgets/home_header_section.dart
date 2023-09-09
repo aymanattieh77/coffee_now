@@ -31,7 +31,7 @@ class HomeHeaderSection extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {
-            //TODO go to ticket
+            AppRouter.pushNamed(context, routeName: Routes.notification);
           },
           child: IconWithContainer(
             svgPath: Assets.icons.ticket,
