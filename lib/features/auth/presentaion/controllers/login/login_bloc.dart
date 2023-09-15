@@ -20,7 +20,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  login() {
+  void login() {
     if (formKey.currentState!.validate()) {
       formKey.currentState!.save();
       add(LoginFirebase(emailController.text, passwordController.text));

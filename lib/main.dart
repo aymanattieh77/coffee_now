@@ -5,6 +5,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_phoenix/flutter_phoenix.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 import 'package:coffee_now/app.dart';
 import 'package:coffee_now/bloc_observer.dart';
@@ -20,6 +21,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // FirebaseCrashlytics.instance.crash();
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
   await EasyLocalization.ensureInitialized();
   await serviceLocatorStart();
   setupNotification();

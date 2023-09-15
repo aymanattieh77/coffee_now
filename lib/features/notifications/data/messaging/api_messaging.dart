@@ -15,12 +15,12 @@ Future<void> handler(RemoteMessage message) async {
 abstract class APIMessagingService {
   Future<void> initNotifications();
   Future initPushNotifications();
-
   Future<void> initLocalNotification();
 }
 
 class APIMessagingServiceImpl implements APIMessagingService {
   final _firebaseMessaging = FirebaseMessaging.instance;
+  final _localNotification = FlutterLocalNotificationsPlugin();
 
   final androidChannel = const AndroidNotificationChannel(
     "high_importance_channel",
@@ -32,8 +32,6 @@ class APIMessagingServiceImpl implements APIMessagingService {
     enableVibration: true,
     showBadge: true,
   );
-
-  final _localNotification = FlutterLocalNotificationsPlugin();
 
   @override
   Future<void> initNotifications() async {
